@@ -27,6 +27,7 @@
         "object-curly-newline": "off",
         "semi": 0,
         "comma-dangle": 0,
+        "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["state"] }],
         "prettier/prettier": "error",
         "react/jsx-filename-extension": [
             1,

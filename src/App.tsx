@@ -1,16 +1,25 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
-import styled from 'styled-components'
+import Layout from './components/Layout'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import { routes } from './router'
 
-const Wrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background: skyblue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-`
 export default function App() {
-  return <Wrapper>Hi guy,welcome to my site!</Wrapper>
+  const isLogin = localStorage.getItem('isLogin')
+  return (
+    <Routes>
+      <Route path="/" element={isLogin ? <Layout /> : <Login />}>
+        <Route index element={<Home />} />
+        {routes.map((item) => (
+          <Route
+            path={item.path}
+            key={item.path}
+            element={<item.component />}
+          />
+        ))}
+      </Route>
+    </Routes>
+  )
 }

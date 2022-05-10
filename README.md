@@ -1,46 +1,28 @@
-# Getting Started with Create React App
+青（碧、绿色系列）（#E8F5E9）
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+　　五行为木，方位上对应东方，为春季，人体对应肝胆，五德为“仁”，代表生长、发展；
 
-## Available Scripts
+红（红、紫色系列）（#FFEBEE）
 
-In the project directory, you can run:
+　　五行为火，方位上对应南方，为夏季，人体上对应心脏，心血管系统等，五德为“礼”，代表上升、热烈；
 
-### `npm start`
+黄（土黄色系列）（#FFFDE7）
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+　　五行为土，方位上对应中央，为四季交替月，人体上对应脾胃，五德为“信”；代表包容、宽厚；
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+白（乳白色系列）（#fffbf0）
 
-### `npm test`
+　　五行为金，方位上对应西方，为秋季，人体上对应肺与大肠，五德为“义”，代表高贵、成功；
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+黑（蓝色系列）（#E3F2FD）
 
-### `npm run build`
+　　五行为水，方位上对应北方，为冬季，人体上对应肾、泌尿系统；五德为“智”，代表黑夜、睡眠、沉静。
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+五行生克
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+　　相生：木生火、火生土、土生金、金生水、水生木。
+　　相克：木克土、土克水、水克火、火克金、金克木。
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+　　简单的说，相生为相帮之意，相克为制约之意，一般以相生为好，当然，这只是简单的看法，还有一些特殊性。
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+金（#fffbf0）木（#E8F5E9）水（#E3F2FD）火（#FFEBEE）土 （#FFFDE7） 白绿蓝红黄
