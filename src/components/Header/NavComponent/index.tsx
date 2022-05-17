@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 import { Box, Tabs, Tab } from '@mui/material'
+// import { commonRoutes } from '../../../router/index'
 
 const NavWrapper = styled.div`
   height: 60px;
@@ -18,11 +19,16 @@ const tabList = [
     componentPath: '/metaphysics',
   },
   {
-    navName: '计算机技术',
-    componentPath: '/tech',
+    navName: '科学',
+    componentPath: '/science',
   },
   {
-    navName: '生活琐事',
+    navName: '计算机',
+    componentPath: '/tech',
+  },
+
+  {
+    navName: '生活',
     componentPath: '/trivial',
   },
   {

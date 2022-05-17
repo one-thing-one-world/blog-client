@@ -4,6 +4,7 @@ import Metaphysics from '../pages/Metaphysics'
 import NotFound from '../pages/NotFound'
 import Tech from '../pages/Tech'
 import Trivial from '../pages/Trivial'
+import Science from '../pages/Science'
 
 export const commonRoutes = [
   {
@@ -11,7 +12,7 @@ export const commonRoutes = [
     component: Home,
     ext: true,
     meta: {
-      title: 'Home',
+      title: '首页',
     },
   },
   {
@@ -19,7 +20,7 @@ export const commonRoutes = [
     component: Metaphysics,
     ext: true,
     meta: {
-      title: 'Metaphysics',
+      title: '玄学',
     },
   },
   {
@@ -27,7 +28,7 @@ export const commonRoutes = [
     component: Tech,
     ext: true,
     meta: {
-      title: 'Tech',
+      title: '计算机技术',
     },
   },
   {
@@ -36,6 +37,14 @@ export const commonRoutes = [
     ext: true,
     meta: {
       title: 'Trivial',
+    },
+  },
+  {
+    path: '/science',
+    component: Science,
+    ext: true,
+    meta: {
+      title: '科学',
     },
   },
   {
