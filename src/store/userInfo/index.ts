@@ -8,8 +8,9 @@ export interface userInfoState {
 }
 
 const initialState: userInfoState = {
-  isLogin: 'login',
+  isLogin: 'notLogin',
 }
+
 export const userInfoSlice = createSlice({
   name: 'userInfo',
   initialState,
@@ -22,7 +23,7 @@ export const userInfoSlice = createSlice({
     },
   },
 })
-export const isLogin = (state: RootState) => state.userInfo.isLogin
 
+export const isLogin = (state: RootState) => state.userInfo.isLogin
 export const { login, logout } = userInfoSlice.actions
 export default userInfoSlice.reducer

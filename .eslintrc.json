@@ -24,6 +24,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "no-console": "off",
         "object-curly-newline": "off",
         "semi": 0,
         "comma-dangle": 0,

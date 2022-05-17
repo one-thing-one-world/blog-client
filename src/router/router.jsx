@@ -1,11 +1,11 @@
+import AuthorArtical from '../pages/AuthorArtical'
 import Home from '../pages/Home'
-import Login from '../pages/Login'
 import Metaphysics from '../pages/Metaphysics'
 import NotFound from '../pages/NotFound'
 import Tech from '../pages/Tech'
 import Trivial from '../pages/Trivial'
 
-export const routes = [
+export const commonRoutes = [
   {
     path: '/home',
     component: Home,
@@ -38,23 +38,23 @@ export const routes = [
       title: 'Trivial',
     },
   },
-]
-
-export const commonRoutea = [
-  {
-    path: '/login',
-    ext: true,
-    component: Login,
-    meta: {
-      title: 'Login',
-    },
-  },
   {
     path: '/404',
     ext: true,
     component: NotFound,
     meta: {
       title: '404',
+    },
+  },
+]
+
+export const accessRoute = [
+  {
+    path: '/authorArtical',
+    ext: true,
+    component: AuthorArtical,
+    meta: {
+      title: 'AuthorArtical',
     },
   },
 ]

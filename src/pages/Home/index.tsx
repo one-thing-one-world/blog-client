@@ -1,11 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 
 const Wrapper = styled.div`
-  /* width: 100vw;
-  height: 100vh; */
-  /* background: skyblue; */
   font-size: 20px;
 `
 
@@ -29,21 +26,25 @@ const SoilWrapper = styled(GoldenWrapper)`
 `
 export default function Home() {
   const navigate = useNavigate()
+  useEffect(() => {
+    // window.history.replaceState()
+    console.log(window.location, 'home')
+  }, [])
   return (
     <Wrapper>
       <div
         aria-hidden="true"
         onClick={() => {
-          localStorage.removeItem('isLogin')
+          navigate('/login')
         }}
       >
-        clear
+        got to login page
       </div>
 
       <div
         aria-hidden="true"
         onClick={() => {
-          navigate('/metaphysics')
+          navigate('/metaphysics/sss')
         }}
       >
         jump to metaphysics
