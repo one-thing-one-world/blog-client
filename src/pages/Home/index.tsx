@@ -5,11 +5,11 @@ import styled from 'styled-components'
 // import { useNavigate } from 'react-router-dom'
 
 import HomeCom from './HomeCom'
-import MetaphysicsCom from './MetaphysicsCom/index'
-import ScienceCom from './ScienceCom'
-import TechCom from './TechCom'
-import TrivialCom from './TrivialCom'
-import WriteArticalCom from './WriteArticalCom'
+// import MetaphysicsCom from './MetaphysicsCom/index'
+// import ScienceCom from './ScienceCom'
+// import TechCom from './TechCom'
+// import TrivialCom from './TrivialCom'
+// import WriteArticalCom from './WriteArticalCom'
 
 const Wrapper = styled.div`
   font-size: 20px;
@@ -42,11 +42,11 @@ export default function Home() {
   return (
     <Wrapper>
       <HomeCom />
-      <MetaphysicsCom />
+      {/* <MetaphysicsCom />
       <ScienceCom />
       <TechCom />
       <TrivialCom />
-      <WriteArticalCom />
+      <WriteArticalCom /> */}
     </Wrapper>
   )
 }
