@@ -15,10 +15,10 @@ export const userInfoSlice = createSlice({
   name: 'userInfo',
   initialState,
   reducers: {
-    login: (state) => {
+    login: (state: userInfoState) => {
       state.isLogin = 'login'
     },
-    logout: (state) => {
+    logout: (state: userInfoState) => {
       state.isLogin = 'notLogin'
     },
   },
