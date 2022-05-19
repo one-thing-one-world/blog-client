@@ -1,6 +1,10 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 
+interface Iprops {
+  children?: ReactNode
+  bgColor: string
+}
 const BasicHomeWrapper = styled.div`
   width: 100%;
   height: 500px;
@@ -10,10 +14,10 @@ const BasicHomeWrapper = styled.div`
   justify-content: center;
   padding: 0 40px;
   box-sizing: border-box;
+  background: ${(props: Iprops) => props.bgColor};
 `
 
-const BasicHomeCom = ({ children }: { children: ReactNode }) => (
-  <BasicHomeWrapper>{children}</BasicHomeWrapper>
+const BasicHomeCom = ({ children, bgColor }: Iprops) => (
+  <BasicHomeWrapper bgColor={bgColor}>{children}</BasicHomeWrapper>
 )
-
 export default BasicHomeCom

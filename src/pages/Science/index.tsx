@@ -1,16 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Typography } from '@mui/material'
 import CenterWrapper from '../../style/common'
 
-const Wrapper = styled.div`
+const WatterWrapper = styled.div`
   width: 100%;
-  height: 500px;
+  height: 700px;
+  background: #e3f2fd;
 `
 
 export default function Science() {
   return (
-    <Wrapper>
-      <CenterWrapper>细胞，数学，宇宙。</CenterWrapper>
-    </Wrapper>
+    <WatterWrapper>
+      <CenterWrapper>
+        <Typography variant="h4" gutterBottom component="div">
+          细胞，数学，宇宙。
+        </Typography>
+      </CenterWrapper>
+    </WatterWrapper>
   )
 }

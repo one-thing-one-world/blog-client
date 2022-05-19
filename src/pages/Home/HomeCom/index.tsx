@@ -1,26 +1,10 @@
 import React from 'react'
-// import styled from 'styled-components'
 import { Button, Typography } from '@mui/material'
 import BasicHomeCom from '../../../components/BasicHomeCom'
-// import CenterWrapper from '../../../style/common'
-// import { useNavigate } from 'react-router-dom'
-// import flower from '../../../assets/flower.jpg'
-
-// const SoilWrapper = styled.div`
-//   /* background: #fffde7; */
-//   width: 100%;
-//   height: 500px;
-//   display: flex;
-//   align-items: center;
-//   flex-direction: column;
-//   justify-content: center;
-//   padding: 0 40px;
-//   box-sizing: border-box;
-// `
 
 export default function HomeCom() {
   return (
-    <BasicHomeCom>
+    <BasicHomeCom bgColor="#fffbf0">
       <Typography
         sx={{ marginBottom: '60px' }}
         variant="h4"

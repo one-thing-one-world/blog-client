@@ -1,26 +1,24 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Button, Typography } from '@mui/material'
 import CenterWrapper from '../../../style/common'
-// import { useNavigate } from 'react-router-dom'
-const GoldenWrapper = styled.div`
-  /* background: #fffbf0; */
-  width: 100%;
-  height: 700px;
-`
+import BasicHomeCom from '../../../components/BasicHomeCom'
+
 export default function WriteArticalCom() {
   return (
-    <GoldenWrapper>
-      {/* <CenterWrapper>玄之又玄，众妙之门。</CenterWrapper> */}
-      {/* 玄学 */}
+    <BasicHomeCom bgColor="#fffbf0">
       <CenterWrapper>
-        <Typography variant="h4" gutterBottom component="div">
-          金
+        <Typography
+          sx={{ marginBottom: '60px' }}
+          variant="h4"
+          gutterBottom
+          component="div"
+        >
+          写出所思所想，记录世间万物。
         </Typography>
         <Button variant="contained" size="large">
           开始阅读
         </Button>
       </CenterWrapper>
-    </GoldenWrapper>
+    </BasicHomeCom>
   )
 }
