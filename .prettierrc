@@ -3,5 +3,7 @@
   "tabWidth": 2,
   "semi": false,
   "no-extra-semi":false,
-  "singleQuote": true
+  "singleQuote": true,
+  "arrowParens": "avoid",
+  "prefer-arrow-callback": 0
  }

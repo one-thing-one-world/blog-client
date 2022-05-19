@@ -30,6 +30,9 @@
         "comma-dangle": 0,
         "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["state"] }],
         "prettier/prettier": "error",
+        "prefer-arrow-callback": [ "error", { "allowNamedFunctions": true } ],
+        "arrow-parens": [2, "as-needed", { "requireForBlockBody": true }],
+        "react/function-component-definition":[2, { "namedComponents":["function-declaration" , "function-expression" , "arrow-function"]}], 
         "react/jsx-filename-extension": [
             1,
             {

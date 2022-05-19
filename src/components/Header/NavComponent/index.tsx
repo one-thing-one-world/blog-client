@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { Box, Tabs, Tab } from '@mui/material'
 // import { commonRoutes } from '../../../router/index'
 
@@ -39,12 +39,14 @@ const tabList = [
 
 export default function NavComponent() {
   const navigate = useNavigate()
+  const { pathname } = useLocation()
   const [value, setValue] = useState('/home')
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue)
     navigate(newValue)
   }
+  useEffect(() => setValue(pathname), [pathname])
   return (
     <NavWrapper>
       <Box sx={{ borderBottom: 1, borderColor: 'divider', height: '60px' }}>
