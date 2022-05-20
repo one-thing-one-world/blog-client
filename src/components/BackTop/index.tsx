@@ -1,5 +1,4 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 // import Typography from '@mui/material/Typography'
@@ -50,18 +49,17 @@ function ScrollTop(props: Props) {
 export default function BackTop(props: Props) {
   const { children } = props
   return (
-    <div>
+    <>
       <CssBaseline />
       <AppBar sx={{ background: 'white', color: 'black', boxShadow: 'unset' }}>
         <Toolbar>{children}</Toolbar>
       </AppBar>
       <Toolbar id="back-to-top-anchor" />
-      <Outlet />
       <ScrollTop {...props}>
         <Fab color="primary" size="large" aria-label="scroll back to top">
           回顶部
         </Fab>
       </ScrollTop>
-    </div>
+    </>
   )
 }
