@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import { useAppSelector } from './hook/reduxHook'
 import './App.css'
 import Layout from './components/Layout'
@@ -27,7 +27,9 @@ export default function App() {
             path={path}
             key={path}
             element={
-              isLoginFlag === 'login' ? <Compo /> : <Navigate to="/login" />
+              isLoginFlag === 'login' ? <Compo /> : <Compo />
+
+              // isLoginFlag === 'login' ? <Compo /> : <Navigate to="/login" />
             }
           />
         ))}
