@@ -39,6 +39,7 @@ const LogoWrapper = styled.img`
   border-radius: 50% 50%;
   animation: ${imgRotate} 3s linear infinite;
 `
+
 export default function Header() {
   return (
     <Wrapper>
@@ -48,3 +49,9 @@ export default function Header() {
     </Wrapper>
   )
 }
+
+// const Fn = fn => {
+//   const age = fn()
+//   age += 1
+//   return age
+// }
