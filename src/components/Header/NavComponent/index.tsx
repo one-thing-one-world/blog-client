@@ -8,7 +8,6 @@ const NavWrapper = styled.div`
   height: 60px;
   display: flex;
 `
-
 const tabList = [
   {
     navName: '首页',
@@ -41,21 +40,19 @@ export default function NavComponent() {
   const navigate = useNavigate()
   const { pathname } = useLocation()
   const [value, setValue] = useState('/home')
-
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue)
     navigate(newValue)
   }
-  useEffect(() => setValue(pathname), [pathname])
+  useEffect(
+    () => (pathname === '/' ? setValue('/home') : setValue(pathname)),
+    [pathname]
+  )
+
   return (
     <NavWrapper>
       <Box sx={{ borderBottom: 1, borderColor: 'divider', height: '60px' }}>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="basic tabs example"
-          sx={{ height: '60px' }}
-        >
+        <Tabs value={value} onChange={handleChange} sx={{ height: '60px' }}>
           {tabList.map(({ navName, componentPath }) => (
             <Tab
               sx={{ height: '60px' }}
