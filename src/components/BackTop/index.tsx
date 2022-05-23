@@ -8,6 +8,7 @@ import Box from '@mui/material/Box'
 // import Container from '@mui/material/Container'
 import Fab from '@mui/material/Fab'
 import Zoom from '@mui/material/Zoom'
+// import styled from 'styled-components'
 
 interface Props {
   children: React.ReactNode
@@ -51,8 +52,15 @@ export default function BackTop(props: Props) {
   return (
     <>
       <CssBaseline />
-      <AppBar sx={{ background: 'white', color: 'black', boxShadow: 'unset' }}>
-        <Toolbar>{children}</Toolbar>
+      <AppBar
+        sx={{
+          background: 'white',
+          color: 'black',
+          boxShadow: 'unset',
+          padding: 0,
+        }}
+      >
+        <Toolbar sx={{ padding: '0 !important' }}>{children}</Toolbar>
       </AppBar>
       <Toolbar id="back-to-top-anchor" />
       <ScrollTop {...props}>
