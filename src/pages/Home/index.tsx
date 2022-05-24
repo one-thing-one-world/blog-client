@@ -10,7 +10,7 @@ import TrivialCom from './TrivialCom'
 import WriteArticalCom from './WriteArticalCom'
 
 const Wrapper = styled.div`
-  font-size: 20px;
+  /* font-size: 2000rw !important; */
 `
 export default function Home() {
   // const navigate = useNavigate()
