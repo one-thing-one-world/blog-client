@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Typography } from '@mui/material'
-import CenterWrapper from '../../../style/common'
+import { CenterWrapper } from '../../../style/common'
 import BasicHomeCom from '../../../components/BasicHomeCom'
 
 export default function WriteArticalCom() {

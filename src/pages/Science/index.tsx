@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Typography } from '@mui/material'
-import CenterWrapper from '../../style/common'
+import { CenterWrapper } from '../../style/common'
 
 const WatterWrapper = styled.div`
   width: 100%;

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const CenterWrapper = styled.div`
+export const CenterWrapper = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
@@ -10,4 +10,3 @@ const CenterWrapper = styled.div`
   font-size: 30px;
   /* text-align: center; */
 `
-export default CenterWrapper
