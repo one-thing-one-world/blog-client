@@ -22,6 +22,8 @@ const TextWrapper = styled.div`
   align-items: center;
   justify-content: center;
   background: linear-gradient(313deg, #fecdc9 0%, #bff7f2 64%, #a8c4fb 100%);
+  border-radius: 15px;
+
   @media (max-width: 750px) {
     font-size: 18px;
   }
