@@ -3,6 +3,7 @@ import styled from 'styled-components'
 // import { useNavigate } from 'react-router-dom'
 
 import HomeCom from './HomeCom'
+import HomeIntro from './HomeIntro'
 import MetaphysicsCom from './MetaphysicsCom/index'
 import ScienceCom from './ScienceCom'
 import TechCom from './TechCom'
@@ -20,6 +21,7 @@ export default function Home() {
   return (
     <Wrapper>
       <HomeCom />
+      <HomeIntro />
       <MetaphysicsCom />
       <ScienceCom />
       <TechCom />
