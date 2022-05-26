@@ -7,6 +7,7 @@ const Wrapper = styled.div`
   /* height: 400px; */
   margin-top: 50px;
   padding: 0 12px 20px;
+  box-sizing: border-box;
 `
 const IntroWrapper = styled.div`
   width: 100%;
@@ -17,19 +18,18 @@ const IntroWrapper = styled.div`
   @media (max-width: 750px) {
     flex-direction: column;
     align-items: center;
-    & > div {
-      margin-bottom: 20px;
-    }
   }
 `
 const TitleWrapper = styled.div`
-  /* height: 98px; */
   font-size: 35px;
   font-family: PingFangSC-Semibold, PingFang SC;
   font-weight: 600;
   color: #3f3d55;
   line-height: 49px;
   text-align: center;
+  @media (max-width: 750px) {
+    font-size: 26px;
+  }
 `
 const introList = [
   {

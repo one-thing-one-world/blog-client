@@ -13,6 +13,7 @@ const Wrapper = styled.div`
   box-shadow: 0px 8px 50px 0px rgba(149, 157, 165, 0.2);
   border-radius: 25px;
   padding: 0 20px;
+  margin-bottom: 20px;
 `
 
 const TitleText = styled.div`
@@ -26,7 +27,7 @@ const TitleText = styled.div`
   margin: 24px 0;
 `
 const TittleDesc = styled.div`
-  width: 335px;
+  width: 100%;
   height: 100px;
   font-size: 18px;
   font-family: PingFangSC-Medium, PingFang SC;
