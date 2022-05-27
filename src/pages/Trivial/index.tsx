@@ -13,7 +13,7 @@ export default function Trivial() {
     <GoldWrapper>
       <CenterWrapper>
         <Typography variant="h4" gutterBottom component="div">
-          生活酸甜苦辣，生活感悟。
+          人是一根能思想的苇草。
         </Typography>
       </CenterWrapper>
     </GoldWrapper>

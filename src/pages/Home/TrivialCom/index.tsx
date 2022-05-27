@@ -15,7 +15,7 @@ export default function TrivialCom() {
           gutterBottom
           component="div"
         >
-          生活酸甜苦辣，生活感悟。
+          人是一根能思想的苇草
         </Typography>
         <Button variant="contained" size="large">
           开始阅读

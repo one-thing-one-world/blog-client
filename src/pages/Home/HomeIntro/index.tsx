@@ -4,9 +4,8 @@ import IntroItemWrapper from '../../../components/IntroItemWrapper/index'
 
 const Wrapper = styled.div`
   width: 100%;
-  /* height: 400px; */
   margin-top: 50px;
-  padding: 0 12px 20px;
+  padding: 12px 0;
   box-sizing: border-box;
 `
 const IntroWrapper = styled.div`
@@ -34,15 +33,15 @@ const TitleWrapper = styled.div`
 const introList = [
   {
     title: '计算机',
-    tittleDesc: '前端，后端，网络，系统，web3。',
+    tittleDesc: '前端、后端、网络、系统，web3。',
   },
   {
     title: '科学',
-    tittleDesc: ' 细胞，数学，宇宙。',
+    tittleDesc: ' 细胞、数学、宇宙。',
   },
   {
     title: '玄学',
-    tittleDesc: '周易,奇门遁甲。',
+    tittleDesc: '周易、奇门遁甲。',
   },
 ]
 

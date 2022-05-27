@@ -7,7 +7,7 @@ interface Iprops {
 }
 
 const Wrapper = styled.div`
-  width: 305px;
+  width: 312px;
   height: 139px;
   background: #ffffff;
   box-shadow: 0px 8px 50px 0px rgba(149, 157, 165, 0.2);
@@ -28,7 +28,6 @@ const TitleText = styled.div`
 `
 const TittleDesc = styled.div`
   width: 100%;
-  height: 100px;
   font-size: 18px;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;

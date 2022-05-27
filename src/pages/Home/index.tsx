@@ -4,11 +4,12 @@ import styled from 'styled-components'
 
 import HomeCom from './HomeCom'
 import HomeIntro from './HomeIntro'
-import MetaphysicsCom from './MetaphysicsCom/index'
-import ScienceCom from './ScienceCom'
-import TechCom from './TechCom'
-import TrivialCom from './TrivialCom'
-import WriteArticalCom from './WriteArticalCom'
+import HomeSponsor from './HomeSponsor'
+// import MetaphysicsCom from './MetaphysicsCom/index'
+// import ScienceCom from './ScienceCom'
+// import TechCom from './TechCom'
+// import TrivialCom from './TrivialCom'
+// import WriteArticalCom from './WriteArticalCom'
 
 const Wrapper = styled.div`
   /* font-size: 2000rw !important; */
@@ -22,11 +23,12 @@ export default function Home() {
     <Wrapper>
       <HomeCom />
       <HomeIntro />
-      <MetaphysicsCom />
+      <HomeSponsor />
+      {/* <MetaphysicsCom />
       <ScienceCom />
       <TechCom />
       <TrivialCom />
-      <WriteArticalCom />
+      <WriteArticalCom /> */}
     </Wrapper>
   )
 }
