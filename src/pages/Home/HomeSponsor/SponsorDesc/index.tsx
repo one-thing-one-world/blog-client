@@ -3,37 +3,41 @@ import styled from 'styled-components'
 import cup from '../../../../assets/cup.png'
 
 const SponsorDescWrapper = styled.div`
+  width: 579px;
+  text-align: center;
   @media (max-width: 750px) {
+    width: 375px;
   }
 `
 const SponsorDescTitle = styled.div`
-  width: 279px;
-  height: 49px;
+  width: 100%;
   font-size: 35px;
   font-family: PingFangSC-Semibold, PingFang SC;
   font-weight: 600;
   color: #3f3d55;
-  line-height: 49px;
 `
 const SponsorDescText = styled.div`
-  width: 579px;
-  height: 75px;
+  width: 100%;
   font-size: 18px;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
   color: rgba(63, 61, 85, 0.63);
-  line-height: 25px;
+  line-height: 28px;
   margin-top: 26px;
+  text-align: left;
 `
 const SponsorDescPic = styled.img`
   margin-top: 66px;
+  width: 100%;
+  min-width: 335px;
+  max-width: 400px;
 `
 export default function SponsorDesc() {
   return (
     <SponsorDescWrapper>
-      <SponsorDescTitle>买杯coffee</SponsorDescTitle>
+      <SponsorDescTitle>支持我</SponsorDescTitle>
       <SponsorDescText>
-        如果文章你也喜欢或者有帮助，我也很高兴，但如果你想赞助我，你可以通过支付宝或微信支付，当然你也可以用数字货币赞助我。
+        如果文章对你有帮助或者你也喜欢的话，你可以赞助我，可以通过支付宝或微信或者数字货币赞助我。
       </SponsorDescText>
       <SponsorDescPic src={cup} />
     </SponsorDescWrapper>

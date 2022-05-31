@@ -4,10 +4,10 @@ import SponsorDesc from './SponsorDesc'
 import SponsorPayWay from './SponsorPayWay'
 
 const SponsorWrapper = styled.div`
-  /* height: 60px; */
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  margin-top: 50px;
   @media (max-width: 750px) {
     flex-direction: column;
   }
