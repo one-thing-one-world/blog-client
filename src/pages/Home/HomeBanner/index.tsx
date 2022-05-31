@@ -8,6 +8,6 @@ const ImgWrapper = styled.img`
   object-fit: cover;
   margin-top: 30px;
 `
-export default function HomeCom() {
+export default function HomeBanner() {
   return <ImgWrapper src={banner} />
 }

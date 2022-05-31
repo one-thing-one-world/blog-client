@@ -25,6 +25,7 @@ const SponsorDescText = styled.div`
   line-height: 28px;
   margin-top: 26px;
   text-align: left;
+  padding: 0 12px;
 `
 const SponsorDescPic = styled.img`
   margin-top: 66px;
