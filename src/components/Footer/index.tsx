@@ -27,7 +27,7 @@ export default function Footer() {
   return (
     <FooterWrapper>
       <SurportAndConnectWay />
-      <CopyrightWrapper>copyrright by one-thing-one-world</CopyrightWrapper>
+      <CopyrightWrapper>copyright © by one-thing-one-world</CopyrightWrapper>
     </FooterWrapper>
   )
 }

@@ -38,7 +38,7 @@ export default function EmailContent() {
         如果你觉得文章哪里需要改进，或者如果你有什么好的想法，欢迎使用邮箱与我进行思想碰撞～
       </ContentTitleWrapper>
       <EmailButton>
-        <a style={{ color: '#f5fffc ' }} href="mailto:1769031928@qq.com.com">
+        <a style={{ color: '#f5fffc ' }} href="mailto:liujuncai6666@gmail.com">
           Email
         </a>
       </EmailButton>

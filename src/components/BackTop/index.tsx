@@ -64,7 +64,13 @@ export default function BackTop(props: Props) {
       </AppBar>
       <Toolbar id="back-to-top-anchor" />
       <ScrollTop {...props}>
-        <Fab color="primary" size="large" aria-label="scroll back to top">
+        <Fab
+          sx={{
+            background: '#7ECCB4 !important',
+          }}
+          size="large"
+          aria-label="scroll back to top"
+        >
           回顶部
         </Fab>
       </ScrollTop>

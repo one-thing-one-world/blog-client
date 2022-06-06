@@ -10,6 +10,7 @@ const SponsorWrapper = styled.div`
   margin-top: 50px;
   @media (max-width: 750px) {
     flex-direction: column;
+    align-items: center;
   }
 `
 

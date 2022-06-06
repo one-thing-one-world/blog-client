@@ -29,7 +29,9 @@ export default function SurportAndConnectWay() {
     <Wrapper>
       <SurportsWrapper>
         <SurportItemWrapper> Powered by Mist & aahack</SurportItemWrapper>
-        <SurportItemWrapper> Illustration by Mist & aahacks</SurportItemWrapper>
+        <SurportItemWrapper>
+          Illustration by Icons 8 from Ouch!
+        </SurportItemWrapper>
       </SurportsWrapper>
       <ConnectWay>QQ</ConnectWay>
     </Wrapper>

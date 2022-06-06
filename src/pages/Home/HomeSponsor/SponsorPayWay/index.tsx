@@ -4,12 +4,12 @@ import SelectedStatusCom from '../../../../components/SelectedStatusCom'
 import PayItem from './PayItem'
 
 const SponsorPayWayWrapper = styled.div`
-  width: 418px;
+  width: 389px;
   height: 375px;
   position: relative;
   @media (max-width: 750px) {
     flex-direction: column;
-    width: 336px;
+    width: 335px;
   }
 `
 export default function SponsorPayWay() {
