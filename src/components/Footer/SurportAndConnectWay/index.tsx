@@ -28,7 +28,8 @@ export default function SurportAndConnectWay() {
   return (
     <Wrapper>
       <SurportsWrapper>
-        <SurportItemWrapper> Powered by Mist & aahack</SurportItemWrapper>
+        <SurportItemWrapper> desighn by Mist</SurportItemWrapper>
+        <SurportItemWrapper> powerd by React</SurportItemWrapper>
         <SurportItemWrapper>
           Illustration by Icons 8 from Ouch!
         </SurportItemWrapper>

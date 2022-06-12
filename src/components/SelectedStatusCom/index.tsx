@@ -19,7 +19,8 @@ export default function SelectedStatusCom(props: Iprops) {
           isActive: index === activeKey,
           onClick: () => {
             console.log(23)
-            setActiveKey(index)
+            // setActiveKey(index)
+            index === activeKey ? setActiveKey(-1) : setActiveKey(index)
           },
         })
       )}
