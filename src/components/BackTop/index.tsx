@@ -67,6 +67,7 @@ export default function BackTop(props: Props) {
         <Fab
           sx={{
             background: '#7ECCB4 !important',
+            color: 'white',
           }}
           size="large"
           aria-label="scroll back to top"

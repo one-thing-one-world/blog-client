@@ -5,16 +5,17 @@ import BackTop from '../BackTop'
 import Footer from '../Footer'
 import Header from '../Header'
 
+const LayoutWrapper = styled.div`
+  background: #f3f7fd;
+  width: 100%;
+  height: 100vh;
+`
 const OutletWrapper = styled.div`
   max-width: 1020px;
   margin: 0 auto;
 `
 const FooterWrapper = styled(OutletWrapper)``
-const LayoutWrapper = styled.div`
-  background: #f3f7fd;
-  width: 100%;
-  height: 100%;
-`
+
 export default function Layout() {
   return (
     <LayoutWrapper>

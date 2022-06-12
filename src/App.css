@@ -1,16 +1,7 @@
 /* 媒体查询 回到顶部 */
-@media (max-width: 750px) {
-  .css-mgur8{
-    right: 20px !important;
-  }
-}
-@media (min-width: 750px) and (max-width: 1300px) {
-  .css-mgur8{
-    right: 20px !important;
-  }
-}
 
-@media (min-width: 1300px) and (max-width: 1921px) {
+
+/* @media (min-width: 1300px) and (max-width: 1921px) {
   .css-mgur8{
     right: 5% !important;
   }
@@ -30,10 +21,38 @@
   .css-mgur8{
     right: 34% !important;
   }
-}
+}  */
 
-.css-mgur8{
+/* .css-mgur8{
   bottom: 6% !important;
-  right: 5vw;
+  right: 50%  !important;
+  margin-right: -600px;
   z-index: 9;
+} */
+
+
+
+@media (min-width: 360px) and (max-width: 1300px) {
+  .css-mgur8 {
+    /* right: unset !important; */
+    right: 16px !important;
+    margin-right: unset !important;
+    z-index: 9;
+
+  }
+}
+@media (min-width: 1300px) {
+  .css-mgur8 {
+    bottom: 6% !important;
+    right: 50% !important;
+    margin-right: -600px;
+    z-index: 9;
+
+  }
+}
+.css-5si2h0-MuiButtonBase-root-MuiTab-root.Mui-selected{
+  color: #7ECCB4 !important;
+}
+.css-1aquho2-MuiTabs-indicator{
+  background-color: #7ECCB4 !important;
 }

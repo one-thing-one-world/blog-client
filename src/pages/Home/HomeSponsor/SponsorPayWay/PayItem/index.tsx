@@ -26,6 +26,8 @@ const PayItemWrapper = styled.div<PayItemWrapperPorps>`
   position: absolute;
   bottom: 114px;
   z-index: 3;
+  transition: all 600ms ease-in-out;
+
   @media (max-width: 750px) {
     ${props => props.isActive && phoneTrasformAnimationStyle};
   }
