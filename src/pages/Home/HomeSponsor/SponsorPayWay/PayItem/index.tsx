@@ -27,10 +27,10 @@ const WeChatnWrapper = styled(PayItemWrapper)<PayItemWrapperPorps>`
   background: #62d374;
   transition: all 300ms ease-in-out;
 
-  @media (max-width: 750px) {
-    bottom: ${props => props.isActive && '0'};
+  @media (max-width: 821px) {
+    bottom: ${props => props.isActive && '-20px'};
   }
-  @media (min-width: 751px) {
+  @media (min-width: 822px) {
     right: ${props => props.isActive && '-180px'};
   }
 `
@@ -42,10 +42,10 @@ const ZhiFuBaoWrapper = styled(PayItemWrapper)<PayItemWrapperPorps>`
   background: #337cf3;
   transition: all 300ms ease-in-out;
 
-  @media (max-width: 750px) {
-    bottom: ${props => props.isActive && '-59px'};
+  @media (max-width: 821px) {
+    bottom: ${props => props.isActive && '-70px'};
   }
-  @media (min-width: 751px) {
+  @media (min-width: 822px) {
     right: ${props => props.isActive && '-180px'};
   }
 `

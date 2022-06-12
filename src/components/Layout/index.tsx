@@ -16,6 +16,9 @@ const OutletWrapper = styled.div`
   min-height: calc(100vh - 60px);
   padding-bottom: 40px;
   margin: 0 auto;
+  @media (max-width: 822px) {
+    padding: 0 16px;
+  }
 `
 const FooterWrapper = styled.div`
   width: 100%;
