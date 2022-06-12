@@ -35,9 +35,11 @@
 @media (min-width: 360px) and (max-width: 1300px) {
   .css-mgur8 {
     /* right: unset !important; */
-    right: 16px !important;
+    right: 20px !important;
     margin-right: unset !important;
     z-index: 9;
+    bottom: 6% !important;
+
 
   }
 }
