@@ -25,7 +25,7 @@ const WeChatnWrapper = styled(PayItemWrapper)<PayItemWrapperPorps>`
   right: 0;
   bottom: 59px;
   background: #62d374;
-  transition: all 600ms ease-in-out;
+  transition: all 300ms ease-in-out;
 
   @media (max-width: 750px) {
     bottom: ${props => props.isActive && '0'};
@@ -40,7 +40,7 @@ const ZhiFuBaoWrapper = styled(PayItemWrapper)<PayItemWrapperPorps>`
   bottom: 0;
   z-index: 1;
   background: #337cf3;
-  transition: all 600ms ease-in-out;
+  transition: all 300ms ease-in-out;
 
   @media (max-width: 750px) {
     bottom: ${props => props.isActive && '-59px'};

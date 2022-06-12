@@ -5,7 +5,7 @@ const Wrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 120px;
+  margin-top: 60px;
   @media (max-width: 750px) {
     flex-direction: column;
   }
