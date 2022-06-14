@@ -12,7 +12,6 @@ export default function App() {
   const [isLoginFlag, setIsLoginFlag] = useState('notLogin')
   const flag = useAppSelector(isLogin)
   useEffect(() => {
-    console.log('this is app')
     setIsLoginFlag(flag)
   }, [flag])
   return (

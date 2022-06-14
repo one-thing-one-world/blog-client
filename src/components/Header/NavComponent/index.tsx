@@ -19,6 +19,7 @@ const PcTab = () => {
   const [value, setValue] = useState('/home')
   const navigate = useNavigate()
   const { pathname } = useLocation()
+  document.title = '一物一世界'
   useEffect(
     () => (pathname === '/' ? setValue('/home') : setValue(pathname)),
     [pathname]
