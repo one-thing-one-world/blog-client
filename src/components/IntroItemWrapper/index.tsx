@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useNavigate } from 'react-router-dom'
 
 interface Iprops {
   title: string
   tittleDesc: string
+  path: string
 }
 
 const Wrapper = styled.div`
@@ -14,6 +16,7 @@ const Wrapper = styled.div`
   border-radius: 25px;
   padding: 0 20px;
   margin-bottom: 20px;
+  cursor: pointer;
 `
 
 const TitleText = styled.div`
@@ -34,10 +37,13 @@ const TittleDesc = styled.div`
   color: rgba(63, 61, 85, 0.63);
   line-height: 25px;
 `
+
 export default function IntroItemWrapper(props: Iprops) {
-  const { title, tittleDesc } = props
+  const { title, tittleDesc, path } = props
+  const navigate = useNavigate()
+
   return (
-    <Wrapper>
+    <Wrapper onClick={() => navigate(path)}>
       <TitleText>{title}</TitleText>
       <TittleDesc>{tittleDesc}</TittleDesc>
     </Wrapper>

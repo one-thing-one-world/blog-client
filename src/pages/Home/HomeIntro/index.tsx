@@ -35,14 +35,17 @@ const introList = [
   {
     title: '计算机',
     tittleDesc: '前端、后端、网络、系统，web3。',
+    path: '/tech',
   },
   {
     title: '科学',
     tittleDesc: ' 细胞、数学、宇宙。',
+    path: '/science',
   },
   {
     title: '玄学',
     tittleDesc: '周易、奇门遁甲。',
+    path: '/metaphysics',
   },
 ]
 
@@ -53,8 +56,13 @@ export default function HomeIntro() {
         学习感悟、生活感慨、爱好研究。文章囊括计算机、哲学、玄学、科学、生活感悟等。
       </TitleWrapper>
       <IntroWrapper>
-        {introList.map(({ title, tittleDesc }) => (
-          <IntroItemWrapper key={title} tittleDesc={tittleDesc} title={title} />
+        {introList.map(({ title, tittleDesc, path }) => (
+          <IntroItemWrapper
+            key={title}
+            tittleDesc={tittleDesc}
+            title={title}
+            path={path}
+          />
         ))}
       </IntroWrapper>
     </Wrapper>
