@@ -1,6 +1,5 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-// import { useClickAway } from 'ahooks'
 import Alipay from '../../../../../assets/alipay.jpeg'
 import Wechat from '../../../../../assets/wechat.png'
 import WechatText from '../../../../../assets/wechatText.png'
@@ -10,11 +9,10 @@ interface PayItemProps {
   payType?: 'blockChain' | 'weChat' | 'zhiFuBao'
   activeKey?: number
   isActive?: boolean
-  // eslint-disable-next-line no-unused-vars
   onClick?: () => void
 }
 interface PayItemWrapperPorps {
-  isActive: boolean
+  isActive: boolean | undefined
 }
 const PayItemWrapper = styled.div<PayItemWrapperPorps>`
   width: 100%;
@@ -29,6 +27,9 @@ const PayItemWrapper = styled.div<PayItemWrapperPorps>`
   justify-content: space-between;
   align-items: end;
   padding: 60px 24px 18px 0;
+  @media (max-width: 821px) {
+    align-items: center;
+  }
 `
 const WeChatnWrapper = styled(PayItemWrapper)<PayItemWrapperPorps>`
   position: absolute;
@@ -70,33 +71,14 @@ const ZhiFuBaoWrapper = styled(PayItemWrapper)<PayItemWrapperPorps>`
 `
 export default function PayItem(props: PayItemProps) {
   const { activeKey, isActive, payType, onClick } = props
-
-  const blockChainRef = useRef<any>(null)
-  const weChatRef = useRef<any>(null)
-  const zhiFuBaoRef = useRef<any>(null)
-
   console.log(activeKey, isActive, onClick, payType, 'ces')
 
   if (payType === 'blockChain') {
-    return (
-      <PayItemWrapper
-        className="payTab"
-        ref={blockChainRef}
-        onClick={onClick}
-        isActive={activeKey === -1}
-      />
-    )
+    return <PayItemWrapper onClick={onClick} isActive={isActive} />
   }
   if (payType === 'weChat') {
-    console.log('wechat', activeKey === 1)
-
     return (
-      <WeChatnWrapper
-        ref={weChatRef}
-        className="payTab"
-        onClick={onClick}
-        isActive={activeKey === 1}
-      >
+      <WeChatnWrapper onClick={onClick} isActive={isActive}>
         <PayWayImg src={Wechat} />
         <PayTitle src={WechatText} />
       </WeChatnWrapper>
@@ -104,12 +86,7 @@ export default function PayItem(props: PayItemProps) {
   }
   if (payType === 'zhiFuBao') {
     return (
-      <ZhiFuBaoWrapper
-        className="payTab"
-        ref={zhiFuBaoRef}
-        onClick={onClick}
-        isActive={activeKey === 2}
-      >
+      <ZhiFuBaoWrapper onClick={onClick} isActive={isActive}>
         <PayWayImg src={Alipay} />
         <PayTitle src={AlipayText} />
       </ZhiFuBaoWrapper>
