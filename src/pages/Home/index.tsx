@@ -15,6 +15,7 @@ export default function Home() {
   useEffect(() => {
     console.log(window.location, 'home')
   }, [])
+  useEffect(() => {}, [])
   return (
     <Wrapper>
       <HomeBanner />

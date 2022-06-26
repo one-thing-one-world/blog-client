@@ -14,7 +14,7 @@ const SponsorPayWayWrapper = styled.div`
 `
 export default function SponsorPayWay() {
   return (
-    <SponsorPayWayWrapper>
+    <SponsorPayWayWrapper id="SponsorPayWayWrapper">
       <SelectedStatusCom>
         <PayItem payType="blockChain" />
         <PayItem payType="weChat" />

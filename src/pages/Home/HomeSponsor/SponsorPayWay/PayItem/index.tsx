@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
+// import { useClickAway } from 'ahooks'
 import Alipay from '../../../../../assets/alipay.jpeg'
 import Wechat from '../../../../../assets/wechat.png'
 import WechatText from '../../../../../assets/wechatText.png'
@@ -9,6 +10,7 @@ interface PayItemProps {
   payType?: 'blockChain' | 'weChat' | 'zhiFuBao'
   activeKey?: number
   isActive?: boolean
+  // eslint-disable-next-line no-unused-vars
   onClick?: () => void
 }
 interface PayItemWrapperPorps {
@@ -68,13 +70,33 @@ const ZhiFuBaoWrapper = styled(PayItemWrapper)<PayItemWrapperPorps>`
 `
 export default function PayItem(props: PayItemProps) {
   const { activeKey, isActive, payType, onClick } = props
+
+  const blockChainRef = useRef<any>(null)
+  const weChatRef = useRef<any>(null)
+  const zhiFuBaoRef = useRef<any>(null)
+
   console.log(activeKey, isActive, onClick, payType, 'ces')
+
   if (payType === 'blockChain') {
-    return <PayItemWrapper onClick={onClick} isActive={activeKey === -1} />
+    return (
+      <PayItemWrapper
+        className="payTab"
+        ref={blockChainRef}
+        onClick={onClick}
+        isActive={activeKey === -1}
+      />
+    )
   }
   if (payType === 'weChat') {
+    console.log('wechat', activeKey === 1)
+
     return (
-      <WeChatnWrapper onClick={onClick} isActive={activeKey === 1}>
+      <WeChatnWrapper
+        ref={weChatRef}
+        className="payTab"
+        onClick={onClick}
+        isActive={activeKey === 1}
+      >
         <PayWayImg src={Wechat} />
         <PayTitle src={WechatText} />
       </WeChatnWrapper>
@@ -82,7 +104,12 @@ export default function PayItem(props: PayItemProps) {
   }
   if (payType === 'zhiFuBao') {
     return (
-      <ZhiFuBaoWrapper onClick={onClick} isActive={activeKey === 2}>
+      <ZhiFuBaoWrapper
+        className="payTab"
+        ref={zhiFuBaoRef}
+        onClick={onClick}
+        isActive={activeKey === 2}
+      >
         <PayWayImg src={Alipay} />
         <PayTitle src={AlipayText} />
       </ZhiFuBaoWrapper>
