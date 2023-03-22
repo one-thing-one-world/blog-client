@@ -12,13 +12,18 @@ import {
   ListItemText,
 } from '@mui/material'
 import IconButton from '@mui/material/IconButton'
+// import MenuIcon from '@mui/icons-material/Menu'
 import MenuIcon from '@mui/icons-material/Menu'
 import { tabList } from '../tabList'
+import { useAppDispatch } from '../../../hook/reduxHook'
+import { setterUserInfoStoreState } from '../../../store/userInfo'
 
 const PcTab = () => {
   const [value, setValue] = useState('/home')
   const navigate = useNavigate()
   const { pathname } = useLocation()
+  const dispatch = useAppDispatch()
+
   document.title = '一物一世界'
   useEffect(
     () => (pathname === '/' ? setValue('/home') : setValue(pathname)),
@@ -29,6 +34,14 @@ const PcTab = () => {
       <Tabs
         value={value}
         onChange={(event: React.SyntheticEvent, newValue: string) => {
+          const tabObj = tabList.find(item => item.componentPath === newValue)
+          dispatch(
+            setterUserInfoStoreState({
+              type: 'bgColor',
+              value: tabObj?.color,
+            })
+          )
+          console.log(newValue, event, 'color', tabObj)
           setValue(newValue)
           navigate(newValue)
         }}
@@ -50,7 +63,7 @@ const PcTab = () => {
 const PhoneTab = () => {
   const [isShowDrawer, setIsShowDrawer] = useState(false)
   const navigate = useNavigate()
-
+  const dispatch = useAppDispatch()
   return (
     <>
       <Drawer
@@ -67,8 +80,14 @@ const PhoneTab = () => {
             >
               <ListItemButton
                 onClick={() => {
-                  navigate(tab.componentPath)
+                  dispatch(
+                    setterUserInfoStoreState({
+                      type: 'bgColor',
+                      value: tab.color,
+                    })
+                  )
                   setIsShowDrawer(false)
+                  navigate(tab.componentPath)
                 }}
               >
                 <ListItemText primary={tab.navName} />
