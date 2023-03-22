@@ -1,11 +1,12 @@
 import { TextField } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { styled as muistyled } from '@mui/material/styles'
-
 // eslint-disable-next-line import/no-unresolved
 import { green } from '@mui/material/colors'
 import Button, { ButtonProps } from '@mui/material/Button'
+import moment from 'moment'
+import { addArtical } from '../../https/artical'
 import EditorDraft from '../../components/EditorDraft'
 
 const TitleBtnWrapper = styled.div`
@@ -60,21 +61,47 @@ const CssTextField = styled(TextField)({
   },
 })
 export default function AuthorArtical() {
+  const [inputValue, setInputValue] = useState<string>('')
+  const [html, setHtml] = useState('<p></p>')
+
   return (
     <Wrapper>
       <TitleBtnWrapper>
         <CssTextField
-          id="outlined-basic"
+          id="outlined-basic2"
           fullWidth
           label="请输入标题"
           variant="outlined"
           size="small"
           color="success"
           sx={{ margin: '0  10px  0 0' }}
+          value={inputValue}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+            console.log(inputValue)
+            setInputValue(event.target.value)
+          }}
         />
-        <ColorButton variant="contained">发布文章</ColorButton>
+        <ColorButton
+          variant="contained"
+          onClick={() => {
+            // let time = new Date()
+            // moment().format('YYYY-MM-DD HH:mm:ss')
+
+            addArtical({
+              title: inputValue,
+              content: html,
+              author: '',
+              createtime: moment().format('YYYY-MM-DD HH:mm:ss'),
+            })
+              .then(res => console.log(res, 'res'))
+              .catch(err => console.log(err))
+            console.log(inputValue, html)
+          }}
+        >
+          发布文章
+        </ColorButton>
       </TitleBtnWrapper>
-      <EditorDraft />
+      <EditorDraft html={html} setHtml={setHtml} />
     </Wrapper>
   )
 }

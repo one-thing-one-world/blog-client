@@ -10,13 +10,20 @@ const EditorWrapper = styled.div`
   /* margin-top: 20px; */
 `
 
-function EditorDraft() {
+interface IEditorDraft {
+  html: string
+  // eslint-disable-next-line no-unused-vars
+  setHtml: (arg: string) => void
+}
+
+function EditorDraft(props: IEditorDraft) {
+  const { html, setHtml } = props
   // editor 实例
   const [editor, setEditor] = useState<IDomEditor | null>(null) // TS 语法
   // const [editor, setEditor] = useState(null)                   // JS 语法
 
   // 编辑器内容
-  const [html, setHtml] = useState('<p></p>')
+  // const [html, setHtml] = useState('<p></p>')
 
   // // 模拟 ajax 请求，异步设置 html
   // useEffect(() => {
@@ -35,7 +42,7 @@ function EditorDraft() {
     placeholder: '请输入内容...',
     MENU_CONF: {
       uploadImage: {
-        server: '/apc/permission/v1/upload/textEditImage',
+        server: '`/upload/textEditImage',
         uploadImage: [], // 不限制上传文件类型
         maxNumberOfFiles: 4, // 单次最多上传一个文件
         headers: {
