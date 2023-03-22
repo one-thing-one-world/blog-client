@@ -4,7 +4,7 @@ import { Typography } from '@mui/material'
 import { CenterWrapper } from '../../style/common'
 
 const FlameWrapper = styled.div`
-  background: #ffebee;
+  /* background: #ffebee; */
   width: 100%;
   height: 700px;
 `

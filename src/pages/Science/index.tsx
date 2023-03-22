@@ -6,7 +6,7 @@ import { CenterWrapper } from '../../style/common'
 const WatterWrapper = styled.div`
   width: 100%;
   height: 700px;
-  background: #e3f2fd;
+  /* background: #e3f2fd; */
 `
 
 export default function Science() {
