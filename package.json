@@ -18,6 +18,7 @@
     "@wizardoc/fence": "2.0.4",
     "ahooks": "^3.5.0",
     "axios": "^0.27.2",
+    "dotenv-cli": "^7.1.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-redux": "^8.0.1",
@@ -29,8 +30,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start:dev": "dontenv -e .env.dev react-scripts start",
+    "start:prod": "dontenv -e .env.prod react-scripts start",
+    "build": "dontenv -e .env.prod react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint --fix",
