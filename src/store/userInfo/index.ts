@@ -6,11 +6,13 @@ import { RootState } from '../index'
 export interface UserInfoState {
   isLogin: 'login' | 'notLogin'
   bgColor: string
+  tagVisible: boolean
 }
 
 const initialState: UserInfoState = {
   isLogin: 'notLogin',
   bgColor: '#E8F5E9',
+  tagVisible: false,
 }
 
 export const userInfoSlice = createSlice({

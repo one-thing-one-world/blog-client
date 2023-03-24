@@ -5,9 +5,11 @@ import { styled as muistyled } from '@mui/material/styles'
 // eslint-disable-next-line import/no-unresolved
 import { green } from '@mui/material/colors'
 import Button, { ButtonProps } from '@mui/material/Button'
-import moment from 'moment'
-import { addArtical } from '../../https/artical'
+// import moment from 'moment'
+// import { addArtical } from '../../https/artical'
 import EditorDraft from '../../components/EditorDraft'
+import ModalCom from '../../components/ModalCom'
+import ModalContent from './ModalContent'
 
 const TitleBtnWrapper = styled.div`
   display: flex;
@@ -35,7 +37,7 @@ const Wrapper = styled.div`
   }
 `
 // const primaryColor = '#7ECCB4'
-const ColorButton = muistyled(Button)<ButtonProps>(({ theme }) => ({
+export const ColorButton = muistyled(Button)<ButtonProps>(({ theme }) => ({
   color: theme.palette.getContrastText(green[300]),
   backgroundColor: green[300],
   '&:hover': {
@@ -65,7 +67,7 @@ const CssTextField = styled(TextField)({
 export default function AuthorArtical() {
   const [inputValue, setInputValue] = useState<string>('')
   const [html, setHtml] = useState('<p></p>')
-
+  const [modalVisible, setModalVisible] = useState<boolean>(false)
   return (
     <Wrapper>
       <TitleBtnWrapper>
@@ -89,21 +91,30 @@ export default function AuthorArtical() {
             // let time = new Date()
             // moment().format('YYYY-MM-DD HH:mm:ss')
 
-            addArtical({
-              title: inputValue,
-              content: html,
-              author: '',
-              createtime: moment().format('YYYY-MM-DD HH:mm:ss'),
-            })
-              .then(res => console.log(res, 'res'))
-              .catch(err => console.log(err))
+            // addArtical({
+            //   title: inputValue,
+            //   content: html,
+            //   author: '',
+            //   createtime: moment().format('YYYY-MM-DD HH:mm:ss'),
+            // })
+            //   .then(res => console.log(res, 'res'))
+            //   .catch(err => console.log(err))
             console.log(inputValue, html)
+            setModalVisible(true)
           }}
         >
           发布文章
         </ColorButton>
       </TitleBtnWrapper>
       <EditorDraft html={html} setHtml={setHtml} />
+
+      <ModalCom visible={modalVisible}>
+        <ModalContent
+          setModalVisible={setModalVisible}
+          html={html}
+          inputValue={inputValue}
+        />
+      </ModalCom>
     </Wrapper>
   )
 }

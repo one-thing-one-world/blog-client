@@ -12,6 +12,5 @@ interface addArticalParams {
   createtime: string
   content: string
 }
-export const addArtical = (
-  params: addArticalParams
-): Promise<IResponse<null>> => axiosInstance.post('/artical/add', params)
+export const addArtical = (params: addArticalParams): Promise<IResponse<any>> =>
+  axiosInstance.post('/artical/add', params)

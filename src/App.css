@@ -1,6 +1,5 @@
 /* 媒体查询 回到顶部 */
 
-
 /* @media (min-width: 1300px) and (max-width: 1921px) {
   .css-mgur8{
     right: 5% !important;
@@ -30,7 +29,28 @@
   z-index: 9;
 } */
 
-
+html,
+body,
+ul,
+li,
+ol,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+legend,
+img {
+  margin: 0;
+  padding: 0;
+}
 
 @media (min-width: 360px) and (max-width: 1300px) {
   .css-mgur8 {
@@ -39,8 +59,6 @@
     margin-right: unset !important;
     z-index: 9;
     bottom: 6% !important;
-
-
   }
 }
 @media (min-width: 1300px) {
@@ -49,12 +67,13 @@
     right: 50% !important;
     margin-right: -600px;
     z-index: 9;
-
   }
 }
-.css-5si2h0-MuiButtonBase-root-MuiTab-root.Mui-selected,.css-11vlanz.Mui-selected{
-  color: #7ECCB4 !important;
+.css-5si2h0-MuiButtonBase-root-MuiTab-root.Mui-selected,
+.css-11vlanz.Mui-selected {
+  color: #7eccb4 !important;
 }
-.css-1aquho2-MuiTabs-indicator,.css-ttwr4n{
-  background-color: #7ECCB4 !important;
+.css-1aquho2-MuiTabs-indicator,
+.css-ttwr4n {
+  background-color: #7eccb4 !important;
 }
