@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^7.1.0",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "^5.11.11",
@@ -40,11 +41,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start:dev": "dotenv -e .env.dev react-scripts start",
-    "start:prod": "dotenv -e .env.prod react-scripts start",
-    "build": "dotenv -e .env.prod react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start:dev": "dotenv -e .env.dev craco start",
+    "start:prod": "dotenv -e .env.prod craco start",
+    "build": "dotenv -e .env.prod craco build",
+    "test": "craco test",
+    "eject": "craco eject",
     "lint": "eslint --fix",
     "pretty": "prettier --write .",
     "prepare": "husky install"

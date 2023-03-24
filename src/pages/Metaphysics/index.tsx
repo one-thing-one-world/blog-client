@@ -1,34 +1,33 @@
-// import React from 'react'
-// import styled from 'styled-components'
-
-// const Wrapper = styled.div`
-//   /* background: #fffbf0; */
-//   width: 100%;
-//   height: 700px;
-// `
-
-// export default function Metaphysics() {
-//   return <Wrapper>Metaphysics</Wrapper>
-// }
 import React from 'react'
 import styled from 'styled-components'
 import { Typography } from '@mui/material'
-import { CenterWrapper } from '../../style/common'
+import { BannerWrapper, CenterWrapper } from '../../style/common'
+import List from '../../components/List'
 // import { useNavigate } from 'react-router-dom'
+// import { tabList } from '../../components/Header/tabList'
+
 const SoilWrapper = styled.div`
-  /* background: #fffde7; */
+  /* background: ; */
   width: 100%;
-  height: 700px;
 `
+let list = [
+  {
+    title: 'title1',
+    content: 'sdf',
+    time: '2022',
+  },
+]
 export default function Metaphysics() {
   return (
     <SoilWrapper>
-      {/* <CenterWrapper>玄之又玄，众妙之门。</CenterWrapper> */}
       {/* 玄学 */}
       <CenterWrapper>
-        <Typography variant="h4" gutterBottom component="div">
-          玄之又玄，众妙之门。
-        </Typography>
+        <BannerWrapper bgColor="#e8f5e9">
+          <Typography variant="h4" gutterBottom component="div">
+            玄之又玄，众妙之门。
+          </Typography>
+        </BannerWrapper>
+        <List list={list} />
       </CenterWrapper>
     </SoilWrapper>
   )

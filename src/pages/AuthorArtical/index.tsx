@@ -19,10 +19,12 @@ const TitleBtnWrapper = styled.div`
 `
 
 const Wrapper = styled.div`
-  background: #fffbf0;
+  /* background: #fffbf0; */
+  /* background: white; */
+
   width: 100%;
   /* height: 700px; */
-  padding-top: 20px;
+  padding-top: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,7 +76,7 @@ export default function AuthorArtical() {
           variant="outlined"
           size="small"
           color="success"
-          sx={{ margin: '0  10px  0 0' }}
+          sx={{ margin: '0  10px  0 0', background: 'white' }}
           value={inputValue}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
             console.log(inputValue)

@@ -10,13 +10,14 @@ interface ILayoutWrapper {
   color: string
 }
 const LayoutWrapper = styled.div<ILayoutWrapper>`
-  background: ${({ color }) => color};
+  /* background: ${({ color }) => color}; */
+  background: #f3f7fd;
   width: 100%;
   height: 100%;
 `
 const OutletWrapper = styled.div`
   max-width: 1020px;
-  height: 100%;
+  /* height: 100%; */
   min-height: calc(100vh - 60px);
   padding-bottom: 40px;
   margin: 0 auto;
