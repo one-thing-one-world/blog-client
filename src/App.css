@@ -77,3 +77,10 @@ img {
 .css-ttwr4n {
   background-color: #7eccb4 !important;
 }
+
+.css-h4y409-MuiList-root {
+  padding: unset !important;
+}
+.css-ydvazy-MuiListItem-root {
+  border-bottom: 1px solid #e8f5e9 !important;
+}

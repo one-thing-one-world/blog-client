@@ -6,11 +6,25 @@ export interface IResponse<T> {
   message: string
 }
 
-interface addArticalParams {
+export interface addArticalParams {
   title: string
+  tagType: string
   author: string
-  createtime: string
+  createTime: string
   content: string
 }
-export const addArtical = (params: addArticalParams): Promise<IResponse<any>> =>
-  axiosInstance.post('/artical/add', params)
+
+interface IaddArtical {
+  code: number
+  data: {}
+  message: string
+}
+
+interface IGetArticalList {
+  list: addArticalParams[]
+}
+export const addArtical = (
+  params: addArticalParams
+): Promise<IResponse<IaddArtical>> => axiosInstance.post('/artical/add', params)
+export const getArticalList = (): Promise<IResponse<IGetArticalList>> =>
+  axiosInstance.get('/artical/all')

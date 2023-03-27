@@ -1,22 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { Typography } from '@mui/material'
+import { TypographyCom } from '../../components/TypographyCom'
 import { BannerWrapper, CenterWrapper } from '../../style/common'
+import List from '../../components/List'
+import { getArticalList } from '../../https/artical'
 
 const GoldWrapper = styled.div`
-  /* background: #e3f2fd; */
   width: 100%;
-  /* height: 320px; */
 `
 export default function Trivial() {
+  const [articalList, setarticalList] = useState<any>([])
+
+  useEffect(() => {
+    getArticalList()
+      .then(res => {
+        console.log(res, 'res')
+        // science","trivial","tech","metaphysics
+        let arr = res.data.list.filter(({ tagType }) =>
+          tagType.includes('science')
+        )
+        setarticalList(arr)
+      })
+      .catch(err => console.log(err))
+  }, [])
   return (
     <GoldWrapper>
       <CenterWrapper>
         <BannerWrapper bgColor="#e3f2fd">
-          <Typography variant="h4" gutterBottom component="div">
-            人是一根能思想的苇草。
-          </Typography>
+          <TypographyCom text="人是一根能思想的苇草。" />
         </BannerWrapper>
+        <List list={articalList} />
       </CenterWrapper>
     </GoldWrapper>
   )

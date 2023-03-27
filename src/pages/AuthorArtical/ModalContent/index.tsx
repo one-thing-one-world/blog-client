@@ -12,6 +12,7 @@ import CloseIcon from '@mui/icons-material/Close'
 import moment from 'moment'
 // import { useSnackbar } from '@mui/base'
 import { useSnackbar } from 'notistack'
+import { useMediaQuery } from 'react-responsive'
 import { setterUserInfoStoreState } from '../../../store/userInfo'
 import { useAppSelector } from '../../../hook/reduxHook'
 import { ColorButton } from '..'
@@ -36,6 +37,7 @@ const LabelComWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-top: 15px;
+  /* border: 2rw solid red; */
 `
 const LabelTitleWrapper = styled.div`
   width: 90px;
@@ -124,11 +126,22 @@ interface TabListItem {
   name: string
   value: string
 }
-const TagLabelCom = () => {
+
+interface ITagLabelCom {
+  toTagList: TabListItem[]
+  setToTagList: (arg: TabListItem[]) => void
+  fromTagList: TabListItem[]
+  setFromTagList: (arg: TabListItem[]) => void
+}
+const TagLabelCom = (props: ITagLabelCom) => {
+  const { toTagList, setToTagList, fromTagList, setFromTagList } = props
   const dispatch = useDispatch()
   const tagVisible = useAppSelector(state => state.userInfo.tagVisible)
   const addRef = useRef<HTMLDivElement>(null)
-  //   const [isHideTag, setIsHideTag] = useState<boolean>(false)
+
+  const isLabtab = useMediaQuery({ query: '(max-width: 800px)' })
+  console.log(isLabtab, 'isLabtab')
+
   useClickAway(() => {
     dispatch(
       setterUserInfoStoreState({
@@ -138,30 +151,6 @@ const TagLabelCom = () => {
     )
     console.log(123, 'isHasClickItemFlag')
   }, addRef)
-
-  let tagList = [
-    {
-      name: '玄学',
-      value: 'metaphysics',
-    },
-    {
-      name: '科学',
-      value: 'science',
-    },
-    {
-      name: '计算机',
-      value: 'tech',
-    },
-    {
-      name: '生活',
-      value: 'trivial',
-    },
-  ] as const
-
-  const [fromTagList, setFromTagList] = useState<TabListItem[]>(
-    JSON.parse(JSON.stringify(tagList))
-  )
-  const [toTagList, setToTagList] = useState<TabListItem[]>([])
 
   return (
     <LabelComWrapper ref={addRef}>
@@ -286,15 +275,45 @@ interface IModalContent {
   html: string
   inputValue: string
   setModalVisible: (arg: boolean) => void
+  resetTitleAndEditor: () => void
 }
+let tagList = [
+  {
+    name: '玄学',
+    value: 'metaphysics',
+  },
+  {
+    name: '科学',
+    value: 'science',
+  },
+  {
+    name: '计算机',
+    value: 'tech',
+  },
+  {
+    name: '生活',
+    value: 'trivial',
+  },
+] as const
 export default function ModalContent(props: IModalContent) {
-  const { html, inputValue, setModalVisible } = props
+  const { html, inputValue, setModalVisible, resetTitleAndEditor } = props
+  const [fromTagList, setFromTagList] = useState<TabListItem[]>(
+    JSON.parse(JSON.stringify(tagList))
+  )
   const [value, setValue] = React.useState<string>('1')
+  const [toTagList, setToTagList] = useState<TabListItem[]>([])
   const { enqueueSnackbar } = useSnackbar()
-
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue((event.target as HTMLInputElement).value)
   }
+
+  const resetTitleContentAndModalParams = () => {
+    resetTitleAndEditor()
+    setValue('')
+    setToTagList([])
+    setFromTagList(JSON.parse(JSON.stringify(tagList)))
+  }
+
   return (
     <ModalContentWrapper>
       <h3 style={{ marginLeft: '-12px', position: 'relative' }}>
@@ -303,7 +322,12 @@ export default function ModalContent(props: IModalContent) {
           <CloseIcon />
         </CloseWrapper>
       </h3>
-      <TagLabelCom />
+      <TagLabelCom
+        toTagList={toTagList}
+        setToTagList={setToTagList}
+        fromTagList={fromTagList}
+        setFromTagList={setFromTagList}
+      />
       <LabelCom title="文章类型">
         <FormControl>
           <RadioGroup
@@ -333,20 +357,18 @@ export default function ModalContent(props: IModalContent) {
           variant="contained"
           sx={{ marginTop: '100px', color: 'white' }}
           onClick={() => {
-            // let time = new Date()
-            // moment().format('YYYY-MM-DD HH:mm:ss')
-
+            const tagTypes = toTagList.map(tab => tab.value)
             addArtical({
               title: inputValue,
               content: html,
+              tagType: JSON.stringify(tagTypes),
               author: 'liujuncai',
-              createtime: moment().format('YYYY-MM-DD HH:mm:ss'),
+              createTime: moment().format('YYYY-MM-DD HH:mm:ss'),
             })
               .then(res => {
                 console.log(res)
 
                 if (res.data.code === 200) {
-                  setModalVisible(false)
                   enqueueSnackbar('文章发布成功', {
                     variant: 'success',
                     anchorOrigin: {
@@ -355,6 +377,7 @@ export default function ModalContent(props: IModalContent) {
                     },
                     autoHideDuration: 2000,
                   })
+                  resetTitleContentAndModalParams()
                 } else {
                   enqueueSnackbar('文章发布失败', {
                     variant: 'error',

@@ -1,22 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { Typography } from '@mui/material'
+import { TypographyCom } from '../../components/TypographyCom'
 import { BannerWrapper, CenterWrapper } from '../../style/common'
+import List from '../../components/List'
+import { getArticalList } from '../../https/artical'
 
 const FlameWrapper = styled.div`
-  /* background: #ffebee; */
   width: 100%;
-  /* height: 320px; */
 `
 export default function Tech() {
+  const [articalList, setarticalList] = useState<any>([])
+
+  useEffect(() => {
+    getArticalList()
+      .then(res => {
+        console.log(res, 'res')
+        // science","trivial","tech","metaphysics
+        let arr = res.data.list.filter(({ tagType }) =>
+          tagType.includes('science')
+        )
+        setarticalList(arr)
+      })
+      .catch(err => console.log(err))
+  }, [])
   return (
     <FlameWrapper>
       <CenterWrapper>
         <BannerWrapper bgColor="#ffebee">
-          <Typography variant="h4" gutterBottom component="div">
-            前端，后端，网络，系统，web3。
-          </Typography>
+          <TypographyCom text="前端，后端，网络，系统，web3。" />
         </BannerWrapper>
+        <List list={articalList} />
       </CenterWrapper>
     </FlameWrapper>
   )

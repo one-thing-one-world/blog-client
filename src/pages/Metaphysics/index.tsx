@@ -1,33 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { Typography } from '@mui/material'
+
 import { BannerWrapper, CenterWrapper } from '../../style/common'
 import List from '../../components/List'
+import { getArticalList } from '../../https/artical'
+import { TypographyCom } from '../../components/TypographyCom'
 // import { useNavigate } from 'react-router-dom'
-// import { tabList } from '../../components/Header/tabList'
 
 const SoilWrapper = styled.div`
-  /* background: ; */
   width: 100%;
 `
-let list = [
-  {
-    title: 'title1',
-    content: 'sdf',
-    time: '2022',
-  },
-]
 export default function Metaphysics() {
+  const [articalList, setarticalList] = useState<any>([])
+  useEffect(() => {
+    getArticalList()
+      .then(res => {
+        console.log(res, 'res')
+        // science","trivial","tech","metaphysics
+        let arr = res.data.list.filter(({ tagType }) =>
+          tagType.includes('metaphysics')
+        )
+        setarticalList(arr)
+      })
+      .catch(err => console.log(err))
+  }, [])
   return (
     <SoilWrapper>
       {/* 玄学 */}
       <CenterWrapper>
         <BannerWrapper bgColor="#e8f5e9">
-          <Typography variant="h4" gutterBottom component="div">
-            玄之又玄，众妙之门。
-          </Typography>
+          <TypographyCom text="玄之又玄，众妙之门。" />
         </BannerWrapper>
-        <List list={list} />
+        <List list={articalList} />
       </CenterWrapper>
     </SoilWrapper>
   )

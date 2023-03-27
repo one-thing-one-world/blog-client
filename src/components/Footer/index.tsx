@@ -7,7 +7,7 @@ const FooterWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding: 0 12px;
+  padding: 0 16px;
 `
 const CopyrightWrapper = styled.div`
   height: 20px;

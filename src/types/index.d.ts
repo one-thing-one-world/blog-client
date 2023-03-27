@@ -15,5 +15,6 @@
 interface IListItem {
   title: string
   content: string
-  time: string
+  createTime: string
+  tagType: string
 }

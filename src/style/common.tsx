@@ -8,6 +8,7 @@ export const CenterWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   font-size: 30px;
+  padding-bottom: 60px;
   /* border-radius: 15px; */
   /* text-align: center; */
 `
@@ -18,6 +19,7 @@ interface IBannerWrapper {
 export const BannerWrapper = styled.div<IBannerWrapper>`
   width: 100%;
   height: 320px;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;

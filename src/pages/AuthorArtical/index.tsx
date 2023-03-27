@@ -5,8 +5,6 @@ import { styled as muistyled } from '@mui/material/styles'
 // eslint-disable-next-line import/no-unresolved
 import { green } from '@mui/material/colors'
 import Button, { ButtonProps } from '@mui/material/Button'
-// import moment from 'moment'
-// import { addArtical } from '../../https/artical'
 import EditorDraft from '../../components/EditorDraft'
 import ModalCom from '../../components/ModalCom'
 import ModalContent from './ModalContent'
@@ -21,12 +19,8 @@ const TitleBtnWrapper = styled.div`
 `
 
 const Wrapper = styled.div`
-  /* background: #fffbf0; */
-  /* background: white; */
-
   width: 100%;
-  /* height: 700px; */
-  padding-top: 30px;
+  padding: 30px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,6 +62,12 @@ export default function AuthorArtical() {
   const [inputValue, setInputValue] = useState<string>('')
   const [html, setHtml] = useState('<p></p>')
   const [modalVisible, setModalVisible] = useState<boolean>(false)
+
+  const resetTitleAndEditor = () => {
+    setHtml('')
+    setInputValue('')
+    setModalVisible(false)
+  }
   return (
     <Wrapper>
       <TitleBtnWrapper>
@@ -88,18 +88,6 @@ export default function AuthorArtical() {
         <ColorButton
           variant="contained"
           onClick={() => {
-            // let time = new Date()
-            // moment().format('YYYY-MM-DD HH:mm:ss')
-
-            // addArtical({
-            //   title: inputValue,
-            //   content: html,
-            //   author: '',
-            //   createtime: moment().format('YYYY-MM-DD HH:mm:ss'),
-            // })
-            //   .then(res => console.log(res, 'res'))
-            //   .catch(err => console.log(err))
-            console.log(inputValue, html)
             setModalVisible(true)
           }}
         >
@@ -113,6 +101,7 @@ export default function AuthorArtical() {
           setModalVisible={setModalVisible}
           html={html}
           inputValue={inputValue}
+          resetTitleAndEditor={resetTitleAndEditor}
         />
       </ModalCom>
     </Wrapper>

@@ -26,7 +26,7 @@ const TitleWrapper = styled.div`
   color: #3f3d55;
   line-height: 49px;
   text-align: center;
-  padding: 0 12px;
+  padding: 0 16px;
   @media (max-width: 750px) {
     font-size: 26px;
   }
