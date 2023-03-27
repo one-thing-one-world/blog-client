@@ -3,7 +3,7 @@ import axios, { AxiosInstance, AxiosResponse } from 'axios'
 
 // export const baseUrl = 'http://101.37.83.146:3000/'
 export const baseUrl = process.env.REACT_APP_BASE_URL
-
+console.log(baseUrl, 'baseUrl')
 export const axiosInstance: AxiosInstance = axios.create({
   // baseURL: '',
   baseURL: baseUrl,
