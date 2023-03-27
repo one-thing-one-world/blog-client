@@ -87,7 +87,7 @@ export default function List(props: IList) {
   const { list } = props
   return (
     <ListContainer>
-      {list.map(({ createTime, title, content, tagType }, index) => (
+      {list?.map(({ createTime, title, content, tagType }, index) => (
         <ListItem
           key={index}
           title={title}
