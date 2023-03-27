@@ -42,7 +42,8 @@
   "scripts": {
     "start:dev": "dotenv -e .env.dev craco start",
     "start:prod": "dotenv -e .env.prod craco start",
-    "build": "dotenv -e .env.prod craco build",
+    "build:dev": "dotenv -e .env.dev craco build",
+    "build:prod": "dotenv -e .env.prod craco build",
     "test": "craco test",
     "eject": "craco eject",
     "lint": "eslint --fix",

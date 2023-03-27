@@ -2,7 +2,8 @@ import axios, { AxiosInstance, AxiosResponse } from 'axios'
 // import { showMessage } from './status'
 
 // export const baseUrl = 'http://101.37.83.146:3000/'
-export const baseUrl = 'http://localhost:3000/'
+export const baseUrl = process.env.REACT_APP_BASE_URL
+
 export const axiosInstance: AxiosInstance = axios.create({
   // baseURL: '',
   baseURL: baseUrl,
