@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.d9a5ebc5.css",
-    "main.js": "/static/js/main.c815a185.js",
+    "main.js": "/static/js/main.811b7783.js",
     "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
     "static/media/wechat.png": "/static/media/wechat.2070cd805b000e098b87.png",
     "static/media/alipay.jpeg": "/static/media/alipay.97c44d0338e3b08d8d23.jpeg",
@@ -9,11 +9,11 @@
     "static/media/banner.svg": "/static/media/banner.642f850a29646ec000fe02ccedf096b3.svg",
     "index.html": "/index.html",
     "main.d9a5ebc5.css.map": "/static/css/main.d9a5ebc5.css.map",
-    "main.c815a185.js.map": "/static/js/main.c815a185.js.map",
+    "main.811b7783.js.map": "/static/js/main.811b7783.js.map",
     "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d9a5ebc5.css",
-    "static/js/main.c815a185.js"
+    "static/js/main.811b7783.js"
   ]
 }
