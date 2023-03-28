@@ -314,6 +314,32 @@ export default function ModalContent(props: IModalContent) {
     setFromTagList(JSON.parse(JSON.stringify(tagList)))
   }
 
+  const isParamsValid = () => {
+    if (!inputValue || !html) {
+      enqueueSnackbar('请填写标题或者内容', {
+        variant: 'error',
+        anchorOrigin: {
+          vertical: 'top',
+          horizontal: 'center',
+        },
+        autoHideDuration: 2000,
+      })
+      return false
+    }
+    if (!toTagList.length) {
+      enqueueSnackbar('请选择文章标签', {
+        variant: 'error',
+        anchorOrigin: {
+          vertical: 'top',
+          horizontal: 'center',
+        },
+        autoHideDuration: 2000,
+      })
+      return false
+    }
+    return true
+  }
+
   return (
     <ModalContentWrapper>
       <h3 style={{ marginLeft: '-12px', position: 'relative' }}>
@@ -358,38 +384,39 @@ export default function ModalContent(props: IModalContent) {
           sx={{ marginTop: '100px', color: 'white' }}
           onClick={() => {
             const tagTypes = toTagList.map(tab => tab.value)
-            addArtical({
-              title: inputValue,
-              content: html,
-              tagType: JSON.stringify(tagTypes),
-              author: 'liujuncai',
-              createTime: moment().format('YYYY-MM-DD HH:mm:ss'),
-            })
-              .then(res => {
-                console.log(res)
-
-                if (res.data.code === 200) {
-                  enqueueSnackbar('文章发布成功', {
-                    variant: 'success',
-                    anchorOrigin: {
-                      vertical: 'top',
-                      horizontal: 'center',
-                    },
-                    autoHideDuration: 2000,
-                  })
-                  resetTitleContentAndModalParams()
-                } else {
-                  enqueueSnackbar('文章发布失败', {
-                    variant: 'error',
-                    anchorOrigin: {
-                      vertical: 'top',
-                      horizontal: 'center',
-                    },
-                    autoHideDuration: 2000,
-                  })
-                }
+            isParamsValid() &&
+              addArtical({
+                title: inputValue,
+                content: html,
+                tagType: JSON.stringify(tagTypes),
+                author: 'liujuncai',
+                createTime: moment().format('YYYY-MM-DD HH:mm:ss'),
               })
-              .catch(err => console.log(err))
+                .then(res => {
+                  console.log(res)
+
+                  if (res.data.code === 200) {
+                    enqueueSnackbar('文章发布成功', {
+                      variant: 'success',
+                      anchorOrigin: {
+                        vertical: 'top',
+                        horizontal: 'center',
+                      },
+                      autoHideDuration: 2000,
+                    })
+                    resetTitleContentAndModalParams()
+                  } else {
+                    enqueueSnackbar('文章发布失败', {
+                      variant: 'error',
+                      anchorOrigin: {
+                        vertical: 'top',
+                        horizontal: 'center',
+                      },
+                      autoHideDuration: 2000,
+                    })
+                  }
+                })
+                .catch(err => console.log(err))
           }}
         >
           发布文章

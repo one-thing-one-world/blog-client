@@ -7,7 +7,7 @@ const EmailWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  margin: 50px 0 30px 0;
 `
 const EmailTitleWrapper = styled.div`
   /* width: 745px; */

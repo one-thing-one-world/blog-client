@@ -9,7 +9,7 @@ interface Iprops {
 }
 
 const Wrapper = styled.div`
-  width: 312px;
+  min-width: 312px;
   height: 139px;
   background: #ffffff;
   box-shadow: 0px 8px 50px 0px rgba(149, 157, 165, 0.2);

@@ -17,6 +17,9 @@ const IntroWrapper = styled.div`
   @media (max-width: 1100px) {
     flex-direction: column;
     align-items: center;
+    & > div {
+      width: 100%;
+    }
   }
 `
 const TitleWrapper = styled.div`

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 import React from 'react'
 import styled from 'styled-components'
 import { ListContainer } from '../../style/common'
@@ -31,19 +32,21 @@ const TagTypeWrapper = styled.div<ITagTypeWrapper>`
   transform: scale(0.8);
   padding: 2px 6px;
   border-radius: 6px;
+  word-break: keep-all;
 `
 const ContentWrapper = styled.div`
   font-size: 16px;
   height: 50px;
   cursor: pointer;
-  text-indent: 4 !important;
-
   /* border: 1px solid #ccc; */
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  > div {
+    text-indent: 4 !important;
+  }
 `
 const TimeWrapper = styled.div`
   font-size: 18px;
@@ -54,12 +57,16 @@ const TimeWrapper = styled.div`
 
 const TitleNameWrapper = styled.div`
   margin-right: 10px;
+  word-break: keep-all;
+  overflow: hidden; //超出的文本隐藏
+  text-overflow: ellipsis; //溢出用省略号显示
+  white-space: nowrap; //溢出不换行
+  border: 1px solid blue;
+  min-width: 40px;
 `
 
 const ListItem = ({ createTime, title, content, tagType }: IListItem) => {
   console.log(JSON.parse(tagType), 'tagType')
-  // let typeTagArr = JSON.parse(tagType)
-  // ;('#f3f7fd')
   let bgColorList = tabList.filter(item => tagType.includes(item.name))
   return (
     <ListWrapper>
@@ -70,8 +77,7 @@ const ListItem = ({ createTime, title, content, tagType }: IListItem) => {
         ))}
       </TitleWrapper>
       <ContentWrapper>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        {content}
+        <div dangerouslySetInnerHTML={{ __html: content?.slice(3, -4) }} />
       </ContentWrapper>
       <TimeWrapper>
         <div>{createTime}</div>
