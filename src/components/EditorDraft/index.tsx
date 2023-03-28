@@ -84,7 +84,12 @@ function EditorDraft(props: IEditorDraft) {
         onCreated={setEditor}
         onChange={(editorContent: any) => setHtml(editorContent.getHtml())}
         mode="default"
-        style={{ height: '500px', overflowY: 'hidden' }}
+        style={{
+          height: 'calc(100vh - 260px)',
+          overflowY: 'hidden',
+          overflowX: 'hidden',
+          width: '100%',
+        }}
       />
     </EditorWrapper>
   )
