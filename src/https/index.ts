@@ -36,21 +36,9 @@ axiosInstance.interceptors.response.use(
 // axios 请求拦截器
 axiosInstance.interceptors.request.use(
   (config: any) => {
-    const root = localStorage.getItem('persist:root')
-    if (root) {
-      const { token } = JSON.parse(JSON.parse(root).userInfo).userInfoData
-      if (token) {
-        config!.headers!.Authorization = `Bearer ${token}`
-        config!.headers!['Content-Type'] = 'application/json'
-        config!.headers!.charset = 'UTF-8'
-      }
-    } else {
-      // 没有token 且不是登录
-      // eslint-disable-next-line no-lonely-if
-      if (window.location.pathname.indexOf('/login') === -1) {
-        // message.warning('token过期， 请重新登录')
-        window.location.href = `${window.location.origin}/gh/login`
-      }
+    const token = localStorage.getItem('appToken')
+    if (token) {
+      config!.headers!.Authorization = `Bearer ${token}`
     }
     return config
   },
