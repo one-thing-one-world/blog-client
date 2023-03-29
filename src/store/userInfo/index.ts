@@ -4,13 +4,13 @@ import { RootState } from '../index'
 // import { fetchCount } from './counterAPI'
 
 export interface UserInfoState {
-  isLogin: 'login' | 'notLogin'
+  isLogin: 0 | 1
   bgColor: string
   tagVisible: boolean
 }
 
 const initialState: UserInfoState = {
-  isLogin: 'notLogin',
+  isLogin: 0,
   bgColor: '#E8F5E9',
   tagVisible: false,
 }
@@ -19,12 +19,6 @@ export const userInfoSlice = createSlice({
   name: 'userInfo',
   initialState,
   reducers: {
-    login: (state: UserInfoState) => {
-      state.isLogin = 'login'
-    },
-    logout: (state: UserInfoState) => {
-      state.isLogin = 'notLogin'
-    },
     setterUserInfoStoreState: (
       state: any,
       action: PayloadAction<{ type: keyof UserInfoState; value: any }>
@@ -36,6 +30,6 @@ export const userInfoSlice = createSlice({
 })
 
 export const isLogin = (state: RootState) => state.userInfo.isLogin
-export const { login, logout, setterUserInfoStoreState } = userInfoSlice.actions
+export const { setterUserInfoStoreState } = userInfoSlice.actions
 
 export default userInfoSlice.reducer

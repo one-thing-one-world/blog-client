@@ -395,7 +395,7 @@ export default function ModalContent(props: IModalContent) {
                 .then(res => {
                   console.log(res)
 
-                  if (res.data.code === 200) {
+                  if (res.code === 200) {
                     enqueueSnackbar('文章发布成功', {
                       variant: 'success',
                       anchorOrigin: {

@@ -1,4 +1,4 @@
-interface ITabList {
+export interface ITabList {
   navName: string
   componentPath: string
   name: string

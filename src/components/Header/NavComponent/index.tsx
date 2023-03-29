@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'
 import {
@@ -14,21 +14,28 @@ import {
 import IconButton from '@mui/material/IconButton'
 // import MenuIcon from '@mui/icons-material/Menu'
 import MenuIcon from '@mui/icons-material/Menu'
-import { tabList } from '../tabList'
-import { useAppDispatch } from '../../../hook/reduxHook'
-import { setterUserInfoStoreState } from '../../../store/userInfo'
+import { ITabList, tabList as authList } from '../tabList'
+import { useAppDispatch, useAppSelector } from '../../../hook/reduxHook'
+import { isLogin, setterUserInfoStoreState } from '../../../store/userInfo'
 
 const PcTab = () => {
   const [value, setValue] = useState('/home')
   const navigate = useNavigate()
   const { pathname } = useLocation()
   const dispatch = useAppDispatch()
-
+  const loginFlag = useAppSelector(isLogin)
   document.title = '一物一世界'
+
   useEffect(
     () => (pathname === '/' ? setValue('/home') : setValue(pathname)),
     [pathname]
   )
+
+  const tabList: ITabList[] = useMemo(() => {
+    let originArr = JSON.parse(JSON.stringify(authList))
+    loginFlag ? originArr : originArr.pop()
+    return originArr
+  }, [loginFlag])
   return (
     <Box sx={{ borderBottom: 1, borderColor: 'divider', height: '60px' }}>
       <Tabs
@@ -64,6 +71,16 @@ const PhoneTab = () => {
   const [isShowDrawer, setIsShowDrawer] = useState(false)
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
+  const loginFlag = useAppSelector(isLogin)
+
+  const [tabList, setTabList] = useState<ITabList[]>(authList)
+
+  useEffect(() => {
+    let originArr = JSON.parse(JSON.stringify(authList))
+    loginFlag ? originArr : originArr.pop()
+    setTabList(originArr)
+  }, [loginFlag])
+
   return (
     <>
       <Drawer
