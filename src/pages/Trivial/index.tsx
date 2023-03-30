@@ -17,7 +17,7 @@ export default function Trivial() {
         console.log(res, 'res')
         // science","trivial","tech","metaphysics
         let arr = res?.data?.list?.filter(({ tagType }) =>
-          tagType.includes('science')
+          tagType.includes('trivial')
         )
         setarticalList(arr)
       })
