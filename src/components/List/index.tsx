@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { useSnackbar } from 'notistack'
+import { useNavigate } from 'react-router-dom'
 import { ListContainer } from '../../style/common'
 import { tabList } from '../Header/tabList'
 import { isLogin } from '../../store/userInfo/index'
@@ -86,6 +87,7 @@ const ListItem = ({
   content,
   tagType,
   id,
+  author,
   getListData,
 }: IListItem) => {
   console.log(JSON.parse(tagType), 'tagType')
@@ -95,8 +97,21 @@ const ListItem = ({
   useEffect(() => {
     console.log(isLogin, 'isLogin')
   }, [isLogin])
+  const navigate = useNavigate()
   return (
-    <ListWrapper>
+    <ListWrapper
+      onClick={() => {
+        navigate('/articalDetail', {
+          state: {
+            content,
+            createTime,
+            title,
+            tagType,
+            author,
+          },
+        })
+      }}
+    >
       <TitleWrapper>
         <TitleNameWrapper>{title}</TitleNameWrapper>
         {bgColorList.map((tag, tagInd) => (
@@ -143,17 +158,20 @@ export default function List(props: IList) {
   const { list, getListData } = props
   return (
     <ListContainer>
-      {list?.map(({ createTime, title, content, tagType, id }, index) => (
-        <ListItem
-          key={index}
-          title={title}
-          content={content}
-          createTime={createTime}
-          tagType={tagType}
-          id={id}
-          getListData={getListData}
-        />
-      ))}
+      {list?.map(
+        ({ createTime, title, content, tagType, id, author }, index) => (
+          <ListItem
+            key={index}
+            title={title}
+            content={content}
+            createTime={createTime}
+            tagType={tagType}
+            id={id}
+            author={author}
+            getListData={getListData}
+          />
+        )
+      )}
     </ListContainer>
   )
 }

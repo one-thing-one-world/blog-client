@@ -5,6 +5,7 @@ import NotFound from '../pages/NotFound'
 import Tech from '../pages/Tech'
 import Trivial from '../pages/Trivial'
 import Science from '../pages/Science'
+import ArticalDetail from '../pages/ArticalDetail'
 
 export const commonRoutes = [
   {
@@ -45,6 +46,14 @@ export const commonRoutes = [
     ext: true,
     meta: {
       title: '科学',
+    },
+  },
+  {
+    path: '/articalDetail',
+    component: ArticalDetail,
+    ext: true,
+    meta: {
+      title: '文章详情',
     },
   },
   {

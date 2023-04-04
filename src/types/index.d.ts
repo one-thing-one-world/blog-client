@@ -18,5 +18,6 @@ interface IListItem {
   createTime: string
   tagType: string
   id: number
+  author: string
   getListData: () => void
 }

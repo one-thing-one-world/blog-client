@@ -22,7 +22,7 @@ const OutletWrapper = styled.div`
   padding-bottom: 40px;
   margin: 0 auto;
   @media (max-width: 822px) {
-    padding: 0 16px;
+    padding: 0 16px 20px;
   }
 `
 const FooterWrapper = styled.div`
