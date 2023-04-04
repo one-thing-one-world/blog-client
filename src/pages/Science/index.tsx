@@ -11,18 +11,21 @@ const WatterWrapper = styled.div`
 
 export default function Science() {
   const [articalList, setarticalList] = useState<any>([])
-
-  useEffect(() => {
+  const getListData = () => {
+    console.log('callbackGetData')
     getArticalList()
       .then(res => {
         console.log(res, 'res')
         // science","trivial","tech","metaphysics
         let arr = res?.data?.list?.filter(({ tagType }) =>
-          tagType.includes('science')
+          tagType.includes('metaphysics')
         )
         setarticalList(arr)
       })
       .catch(err => console.log(err))
+  }
+  useEffect(() => {
+    getListData()
   }, [])
   return (
     <WatterWrapper>
@@ -30,7 +33,7 @@ export default function Science() {
         <BannerWrapper bgColor="#fffde7">
           <TypographyCom text=" 细胞，数学，宇宙。" />
         </BannerWrapper>
-        <List list={articalList} />
+        <List list={articalList} getListData={getListData} />
       </CenterWrapper>
     </WatterWrapper>
   )

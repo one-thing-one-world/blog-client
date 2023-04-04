@@ -19,14 +19,14 @@ module.exports = {
       webpackConfig.output = {
         ...webpackConfig.output,
         ...{
-          assetModuleFilename: 'surveylist/assets/[name].[hash][ext]',
+          assetModuleFilename: 'blog/assets/[name].[hash][ext]',
           filename: whenProd(
-            () => 'surveylist/js/[name].[contenthash:8].chunk.js',
-            'surveylist/js/[name].chunk.js'
+            () => 'blog/js/[name].[contenthash:8].chunk.js',
+            'blog/js/[name].chunk.js'
           ),
           chunkFilename: whenProd(
-            () => 'surveylist/js/[name].[contenthash:8].chunk.js',
-            'surveylist/js/[name].chunk.js'
+            () => 'blog/js/[name].[contenthash:8].chunk.js',
+            'blog/js/[name].chunk.js'
           ),
         },
       }
@@ -35,8 +35,8 @@ module.exports = {
         whenProd(() => {
           if (plugin instanceof MiniCssExtractPlugin) {
             Object.assign(plugin.options, {
-              filename: 'surveylist/css/[name].[contenthash:8].css',
-              chunkFilename: 'surveylist/css/[name].[contenthash:8].chunk.css',
+              filename: 'blog/css/[name].[contenthash:8].css',
+              chunkFilename: 'blog/css/[name].[contenthash:8].chunk.css',
             })
           }
         })
@@ -66,8 +66,7 @@ module.exports = {
           continue
         }
 
-        rule.oneOf[2].use[1].options.name =
-          'surveylist/assets/[name].[hash].[ext]'
+        rule.oneOf[2].use[1].options.name = 'blog/assets/[name].[hash].[ext]'
       }
 
       return webpackConfig

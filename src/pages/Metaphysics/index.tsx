@@ -12,7 +12,9 @@ const SoilWrapper = styled.div`
 `
 export default function Metaphysics() {
   const [articalList, setarticalList] = useState<any>([])
-  useEffect(() => {
+
+  const getListData = () => {
+    console.log('callbackGetData')
     getArticalList()
       .then(res => {
         console.log(res, 'res')
@@ -23,6 +25,9 @@ export default function Metaphysics() {
         setarticalList(arr)
       })
       .catch(err => console.log(err))
+  }
+  useEffect(() => {
+    getListData()
   }, [])
   return (
     <SoilWrapper>
@@ -31,7 +36,7 @@ export default function Metaphysics() {
         <BannerWrapper bgColor="#e8f5e9">
           <TypographyCom text="玄之又玄，众妙之门。" />
         </BannerWrapper>
-        <List list={articalList} />
+        <List list={articalList} getListData={getListData} />
       </CenterWrapper>
     </SoilWrapper>
   )

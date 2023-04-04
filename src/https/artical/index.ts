@@ -20,11 +20,20 @@ interface IaddArtical {
   message: string
 }
 
-interface IGetArticalList {
+interface IGetArticalListData {
   list: addArticalParams[]
+}
+interface IDeleteArticalData {
+  id: string
 }
 export const addArtical = (
   params: addArticalParams
 ): Promise<IResponse<IaddArtical>> => axiosInstance.post('/artical/add', params)
-export const getArticalList = (): Promise<IResponse<IGetArticalList>> =>
+
+export const getArticalList = (): Promise<IResponse<IGetArticalListData>> =>
   axiosInstance.get('/artical/all')
+
+export const deleteArtical = (
+  id: number
+): Promise<IResponse<IDeleteArticalData>> =>
+  axiosInstance.delete(`/artical/delete/${id}`)

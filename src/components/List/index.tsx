@@ -1,8 +1,12 @@
 /* eslint-disable react/no-danger */
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
+import { useSnackbar } from 'notistack'
 import { ListContainer } from '../../style/common'
 import { tabList } from '../Header/tabList'
+import { isLogin } from '../../store/userInfo/index'
+import { useAppSelector } from '../../hook/reduxHook'
+import { deleteArtical } from '../../https/artical'
 
 const ListWrapper = styled.div`
   border-radius: 25px;
@@ -52,6 +56,7 @@ const TimeWrapper = styled.div`
   font-size: 18px;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   /* border: 1px solid blue; */
 `
 
@@ -65,9 +70,31 @@ const TitleNameWrapper = styled.div`
   min-width: 40px;
 `
 
-const ListItem = ({ createTime, title, content, tagType }: IListItem) => {
+interface IDeleteWrapper {
+  isLogin: 0 | 1
+}
+const DeleteWrapper = styled.div<IDeleteWrapper>`
+  margin-right: 20px;
+  color: red;
+  font-size: 16px;
+  display: ${props => (props.isLogin ? 'block' : 'none')};
+  cursor: pointer;
+`
+const ListItem = ({
+  createTime,
+  title,
+  content,
+  tagType,
+  id,
+  getListData,
+}: IListItem) => {
   console.log(JSON.parse(tagType), 'tagType')
+  const flag = useAppSelector(isLogin)
+  const { enqueueSnackbar } = useSnackbar()
   let bgColorList = tabList.filter(item => tagType.includes(item.name))
+  useEffect(() => {
+    console.log(isLogin, 'isLogin')
+  }, [isLogin])
   return (
     <ListWrapper>
       <TitleWrapper>
@@ -80,6 +107,28 @@ const ListItem = ({ createTime, title, content, tagType }: IListItem) => {
         <div dangerouslySetInnerHTML={{ __html: content?.slice(3, -4) }} />
       </ContentWrapper>
       <TimeWrapper>
+        <DeleteWrapper
+          isLogin={flag}
+          onClick={() => {
+            deleteArtical(id)
+              .then(res => {
+                if (res.code === 200) {
+                  enqueueSnackbar('删除成功', {
+                    variant: 'success',
+                    anchorOrigin: {
+                      vertical: 'top',
+                      horizontal: 'center',
+                    },
+                    autoHideDuration: 2000,
+                  })
+                  getListData()
+                }
+              })
+              .catch(err => console.log(err))
+          }}
+        >
+          删除
+        </DeleteWrapper>
         <div>{createTime}</div>
       </TimeWrapper>
     </ListWrapper>
@@ -88,18 +137,21 @@ const ListItem = ({ createTime, title, content, tagType }: IListItem) => {
 
 interface IList {
   list: IListItem[]
+  getListData: () => void
 }
 export default function List(props: IList) {
-  const { list } = props
+  const { list, getListData } = props
   return (
     <ListContainer>
-      {list?.map(({ createTime, title, content, tagType }, index) => (
+      {list?.map(({ createTime, title, content, tagType, id }, index) => (
         <ListItem
           key={index}
           title={title}
           content={content}
           createTime={createTime}
           tagType={tagType}
+          id={id}
+          getListData={getListData}
         />
       ))}
     </ListContainer>

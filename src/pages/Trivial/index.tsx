@@ -11,17 +11,21 @@ const GoldWrapper = styled.div`
 export default function Trivial() {
   const [articalList, setarticalList] = useState<any>([])
 
-  useEffect(() => {
+  const getListData = () => {
+    console.log('callbackGetData')
     getArticalList()
       .then(res => {
         console.log(res, 'res')
         // science","trivial","tech","metaphysics
         let arr = res?.data?.list?.filter(({ tagType }) =>
-          tagType.includes('trivial')
+          tagType.includes('metaphysics')
         )
         setarticalList(arr)
       })
       .catch(err => console.log(err))
+  }
+  useEffect(() => {
+    getListData()
   }, [])
   return (
     <GoldWrapper>
@@ -29,7 +33,7 @@ export default function Trivial() {
         <BannerWrapper bgColor="#e3f2fd">
           <TypographyCom text="人是一根能思想的苇草。" />
         </BannerWrapper>
-        <List list={articalList} />
+        <List list={articalList} getListData={getListData} />
       </CenterWrapper>
     </GoldWrapper>
   )

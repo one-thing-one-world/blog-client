@@ -10,18 +10,21 @@ const FlameWrapper = styled.div`
 `
 export default function Tech() {
   const [articalList, setarticalList] = useState<any>([])
-
-  useEffect(() => {
+  const getListData = () => {
+    console.log('callbackGetData')
     getArticalList()
       .then(res => {
         console.log(res, 'res')
         // science","trivial","tech","metaphysics
         let arr = res?.data?.list?.filter(({ tagType }) =>
-          tagType.includes('tech')
+          tagType.includes('metaphysics')
         )
         setarticalList(arr)
       })
       .catch(err => console.log(err))
+  }
+  useEffect(() => {
+    getListData()
   }, [])
   return (
     <FlameWrapper>
@@ -29,7 +32,7 @@ export default function Tech() {
         <BannerWrapper bgColor="#ffebee">
           <TypographyCom text="前端，后端，网络，系统，web3。" />
         </BannerWrapper>
-        <List list={articalList} />
+        <List list={articalList} getListData={getListData} />
       </CenterWrapper>
     </FlameWrapper>
   )
