@@ -43,7 +43,7 @@ export default function App() {
           ))}
       </Route>
 
-      <Route path="login" element={<Login />} />
+      <Route path="adminLoginPage" element={<Login />} />
       <Route path="*" element={<div>Hello, no this page~</div>} />
     </Routes>
   )
