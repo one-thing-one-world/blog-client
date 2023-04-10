@@ -115,7 +115,9 @@ const ListItem = ({
       <TitleWrapper>
         <TitleNameWrapper>{title}</TitleNameWrapper>
         {bgColorList.map((tag, tagInd) => (
-          <TagTypeWrapper bgColor={tag.color}>{tag.navName}</TagTypeWrapper>
+          <TagTypeWrapper key={tagInd} bgColor={tag.color}>
+            {tag.navName}
+          </TagTypeWrapper>
         ))}
       </TitleWrapper>
       <ContentWrapper>
@@ -124,7 +126,8 @@ const ListItem = ({
       <TimeWrapper>
         <DeleteWrapper
           isLogin={flag}
-          onClick={() => {
+          onClick={e => {
+            e.stopPropagation()
             deleteArtical(id)
               .then(res => {
                 if (res.code === 200) {
@@ -161,7 +164,7 @@ export default function List(props: IList) {
       {list?.map(
         ({ createTime, title, content, tagType, id, author }, index) => (
           <ListItem
-            key={index}
+            key={id}
             title={title}
             content={content}
             createTime={createTime}
