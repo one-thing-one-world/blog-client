@@ -18,7 +18,7 @@ export default function Science() {
         console.log(res, 'res')
         // science","trivial","tech","metaphysics
         let arr = res?.data?.list?.filter(({ tagType }) =>
-          tagType.includes('metaphysics')
+          tagType.includes('science')
         )
         setarticalList(arr)
       })
