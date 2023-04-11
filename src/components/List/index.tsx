@@ -81,6 +81,13 @@ const DeleteWrapper = styled.div<IDeleteWrapper>`
   display: ${props => (props.isLogin ? 'block' : 'none')};
   cursor: pointer;
 `
+const EditorWrapper = styled.div<IDeleteWrapper>`
+  margin-right: 20px;
+  color: blue;
+  font-size: 16px;
+  display: ${props => (props.isLogin ? 'block' : 'none')};
+  cursor: pointer;
+`
 const ListItem = ({
   createTime,
   title,
@@ -124,6 +131,25 @@ const ListItem = ({
         <div dangerouslySetInnerHTML={{ __html: content?.slice(3, -4) }} />
       </ContentWrapper>
       <TimeWrapper>
+        <EditorWrapper
+          isLogin={flag}
+          onClick={e => {
+            e.stopPropagation()
+            navigate('/authorArtical', {
+              state: {
+                isEditor: 1,
+                content,
+                createTime,
+                title,
+                tagType,
+                author,
+                id,
+              },
+            })
+          }}
+        >
+          编辑
+        </EditorWrapper>
         <DeleteWrapper
           isLogin={flag}
           onClick={e => {

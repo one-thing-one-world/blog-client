@@ -3,7 +3,7 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 
-interface IDetailState {
+export interface IDetailState {
   content: string
   createTime: string
   title: string
@@ -39,12 +39,11 @@ const AuthorWrapper = styled.div`
 const ContentWrapper = styled.div`
   width: 100%;
   min-height: 200px;
+  & p {
+    line-height: 26px !important;
+  }
 `
-// const TimeWrapper = styled.div`
-//   width: 100%;
-//   display: flex;
-//   justify-content: flex-end;
-// `
+
 const AuthoreInfoWrapper = styled.div`
   display: flex;
 `

@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-import React, { ReactNode, useRef, useState } from 'react'
+import React, { ReactNode, useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import { useClickAway } from 'ahooks'
 import Radio from '@mui/material/Radio'
@@ -16,7 +16,12 @@ import { useMediaQuery } from 'react-responsive'
 import { setterUserInfoStoreState } from '../../../store/userInfo'
 import { useAppSelector } from '../../../hook/reduxHook'
 import { ColorButton } from '..'
-import { addArtical } from '../../../https/artical'
+import {
+  addArtical,
+  IaddArtical,
+  IResponse,
+  upDateArtical,
+} from '../../../https/artical'
 
 const ModalContentWrapper = styled.div`
   padding: 32px 48px;
@@ -169,7 +174,7 @@ const TagLabelCom = (props: ITagLabelCom) => {
         + 添加文章标签
         <TagWrapper isHideTag={tagVisible}>
           <TagContentwrapper>
-            {fromTagList.map((tagItem, tagInd) => (
+            {fromTagList.map(tagItem => (
               <TagTabWrapper
                 onClick={e => {
                   e.stopPropagation()
@@ -202,7 +207,7 @@ const TagLabelCom = (props: ITagLabelCom) => {
       </AddWrapper>
 
       <ToTagWrapper>
-        {toTagList.map((tagItem, tagInd) => (
+        {toTagList.map(tagItem => (
           <ToTagTabWrapper
             onClick={e => {
               e.stopPropagation()
@@ -276,6 +281,9 @@ interface IModalContent {
   inputValue: string
   setModalVisible: (arg: boolean) => void
   resetTitleAndEditor: () => void
+  isEditor: 0 | 1
+  tagType: string
+  id: number
 }
 let tagList = [
   {
@@ -296,7 +304,17 @@ let tagList = [
   },
 ] as const
 export default function ModalContent(props: IModalContent) {
-  const { html, inputValue, setModalVisible, resetTitleAndEditor } = props
+  const {
+    id,
+    isEditor,
+    tagType,
+    html,
+    inputValue,
+    setModalVisible,
+    resetTitleAndEditor,
+  } = props
+  // console.log(isEditor, originFromTagList, 'originFromTagList')
+
   const [fromTagList, setFromTagList] = useState<TabListItem[]>(
     JSON.parse(JSON.stringify(tagList))
   )
@@ -306,6 +324,24 @@ export default function ModalContent(props: IModalContent) {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue((event.target as HTMLInputElement).value)
   }
+
+  useEffect(() => {
+    if (isEditor) {
+      const EditorFromTagList = tagList.filter(item =>
+        JSON.parse(tagType).some((el: string) => !el?.includes(item.value))
+      )
+      console.log(
+        JSON.parse(tagType),
+        EditorFromTagList,
+        'originFromTagListoriginFromTagList'
+      )
+      const editorToList = tagList.filter(item =>
+        JSON.parse(tagType).some((el: string) => el?.includes(item.value))
+      )
+      setFromTagList(EditorFromTagList)
+      setToTagList(editorToList)
+    }
+  }, [isEditor, tagType])
 
   const resetTitleContentAndModalParams = () => {
     resetTitleAndEditor()
@@ -384,39 +420,55 @@ export default function ModalContent(props: IModalContent) {
           sx={{ marginTop: '100px', color: 'white' }}
           onClick={() => {
             const tagTypes = toTagList.map(tab => tab.value)
-            isParamsValid() &&
-              addArtical({
-                title: inputValue,
-                content: html,
-                tagType: JSON.stringify(tagTypes),
-                author: 'liujuncai',
-                createTime: moment().format('YYYY-MM-DD HH:mm:ss'),
-              })
-                .then(res => {
-                  console.log(res)
-
-                  if (res.code === 200) {
-                    enqueueSnackbar('文章发布成功', {
-                      variant: 'success',
-                      anchorOrigin: {
-                        vertical: 'top',
-                        horizontal: 'center',
-                      },
-                      autoHideDuration: 2000,
-                    })
-                    resetTitleContentAndModalParams()
-                  } else {
-                    enqueueSnackbar('文章发布失败', {
-                      variant: 'error',
-                      anchorOrigin: {
-                        vertical: 'top',
-                        horizontal: 'center',
-                      },
-                      autoHideDuration: 2000,
-                    })
-                  }
+            const httpSuccessFn = (res: IResponse<IaddArtical>) => {
+              if (res.code === 200) {
+                enqueueSnackbar('文章发布成功', {
+                  variant: 'success',
+                  anchorOrigin: {
+                    vertical: 'top',
+                    horizontal: 'center',
+                  },
+                  autoHideDuration: 2000,
                 })
-                .catch(err => console.log(err))
+                resetTitleContentAndModalParams()
+              } else {
+                enqueueSnackbar('文章发布失败', {
+                  variant: 'error',
+                  anchorOrigin: {
+                    vertical: 'top',
+                    horizontal: 'center',
+                  },
+                  autoHideDuration: 2000,
+                })
+              }
+            }
+            if (isEditor) {
+              isParamsValid() &&
+                upDateArtical(id, {
+                  title: inputValue,
+                  content: html,
+                  tagType: JSON.stringify(tagTypes),
+                  author: 'liujuncai',
+                  createTime: moment().format('YYYY-MM-DD'),
+                })
+                  .then(res => {
+                    httpSuccessFn(res)
+                  })
+                  .catch(err => console.log(err))
+            } else {
+              isParamsValid() &&
+                addArtical({
+                  title: inputValue,
+                  content: html,
+                  tagType: JSON.stringify(tagTypes),
+                  author: 'liujuncai',
+                  createTime: moment().format('YYYY-MM-DD'),
+                })
+                  .then(res => {
+                    httpSuccessFn(res)
+                  })
+                  .catch(err => console.log(err))
+            }
           }}
         >
           发布文章

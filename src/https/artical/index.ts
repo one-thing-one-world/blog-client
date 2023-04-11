@@ -14,7 +14,7 @@ export interface addArticalParams {
   content: string
 }
 
-interface IaddArtical {
+export interface IaddArtical {
   code: number
   data: {}
   message: string
@@ -37,3 +37,8 @@ export const deleteArtical = (
   id: number
 ): Promise<IResponse<IDeleteArticalData>> =>
   axiosInstance.delete(`/artical/delete/${id}`)
+export const upDateArtical = (
+  id: number,
+  params: addArticalParams
+): Promise<IResponse<IaddArtical>> =>
+  axiosInstance.patch(`/artical/update/${id}`, params)

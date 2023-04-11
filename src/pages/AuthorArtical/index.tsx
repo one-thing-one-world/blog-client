@@ -1,14 +1,20 @@
 import { TextField } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { styled as muistyled } from '@mui/material/styles'
 // eslint-disable-next-line import/no-unresolved
 import { green } from '@mui/material/colors'
 import Button, { ButtonProps } from '@mui/material/Button'
+import { useLocation } from 'react-router-dom'
 import EditorDraft from '../../components/EditorDraft'
 import ModalCom from '../../components/ModalCom'
 import ModalContent from './ModalContent'
+import { IDetailState } from '../ArticalDetail'
 
+interface IEditoreState extends IDetailState {
+  isEditor: 0 | 1
+  id: number
+}
 const TitleBtnWrapper = styled.div`
   display: flex;
   width: 100%;
@@ -62,7 +68,26 @@ export default function AuthorArtical() {
   const [inputValue, setInputValue] = useState<string>('')
   const [html, setHtml] = useState('<p></p>')
   const [modalVisible, setModalVisible] = useState<boolean>(false)
-
+  const state = useLocation().state ?? {}
+  console.log(state, 'states', useLocation())
+  // if (!state) {
+  //   // if (!state?.isEditor) {
+  //   //   const { isEditor, content, createTime, title, tagType, author } =
+  //   //     state as IEditoreState
+  //   //   console.log(isEditor, content, createTime, title, tagType, author)
+  //   // }
+  // }
+  const { id, isEditor, content, createTime, title, tagType, author } =
+    state as IEditoreState
+  console.log(isEditor, content, createTime, title, tagType, author, 'states')
+  useEffect(() => {
+    if (isEditor) {
+      setInputValue(title)
+      setTimeout(() => {
+        setHtml(content)
+      }, 200)
+    }
+  }, [isEditor])
   const resetTitleAndEditor = () => {
     setHtml('')
     setInputValue('')
@@ -102,6 +127,9 @@ export default function AuthorArtical() {
           html={html}
           inputValue={inputValue}
           resetTitleAndEditor={resetTitleAndEditor}
+          isEditor={isEditor ?? 0}
+          tagType={tagType ?? ''}
+          id={id ?? -1}
         />
       </ModalCom>
     </Wrapper>

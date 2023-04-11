@@ -7,6 +7,9 @@ import styled from 'styled-components'
 const EditorWrapper = styled.div`
   border: 1px solid #ccc;
   z-index: 9;
+  .w-e-text-container {
+    padding-bottom: 40px;
+  }
   /* margin-top: 20px; */
 `
 
