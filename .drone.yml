@@ -14,7 +14,7 @@ steps:
       # - npm i react-scripts
       # - npm run build
       - ls
-      - pwd
+      # - pwd
 
   # - name: sshs
   #   image: appleboy/drone-ssh
