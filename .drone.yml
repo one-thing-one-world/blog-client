@@ -1,7 +1,8 @@
 kind: pipeline
 type: docker
 name: default
-clone: disable:true
+clone:
+  disable: true
 
 steps:
   - name: clone-test
