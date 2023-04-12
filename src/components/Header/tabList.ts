@@ -45,6 +45,13 @@ export const tabList: ITabList[] = [
     // 水色
   },
   {
+    navName: '简介',
+    componentPath: '/about',
+    color: '#fffbf0',
+    name: 'about',
+    // 金色
+  },
+  {
     navName: '写文章',
     componentPath: '/authorArtical',
     color: '#fffbf0',

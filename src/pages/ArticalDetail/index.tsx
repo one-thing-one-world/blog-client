@@ -41,6 +41,7 @@ const ContentWrapper = styled.div`
   min-height: 200px;
   & p {
     line-height: 26px !important;
+    letter-spacing: 0.8px;
   }
 `
 
