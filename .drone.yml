@@ -19,50 +19,54 @@ steps:
       # - git config --global http.version HTTP/1.1
       - pwd
       - ls
-      - echo ${username} ${password}
+      - echo password
       # - npm install
       # - npm i react-scripts
       # - npm run build
       - ls
       # - pwd
 
-  # - name: sshs
-  #   image: appleboy/drone-ssh
-  #   pull: always
-  #   settings:
-  #     host: 101.37.83.146
-  #     username: username
-  #     port: 22
-  #     password:password
-  #     script:
-  #       # - nginx -s reload
-  #       - echo hello nginxsss
-  #       - echo
-  #       - ls
+  - name: sshs
+    image: appleboy/drone-ssh
+    pull: always
+    settings:
+      host: 101.37.83.146
+      username:
+        from_secret: username
+      port: 22
+      password:
+        from_secret: password
+      script:
+        # - nginx -s reload
+        - echo hello nginxsss
+        - echo
+        - ls
 
-  # - name: upload
-  #   image: appleboy/drone-scp
-  #   pull: always
-  #   settings:
-  #     debug: true
-  #     source:
-  #       - build/
-  #     host: 101.37.83.146
-  #     username: username
-  #     port: 22
-  #     password: password
-  #     target: /usr/share/nginx/test_qiankun1
-  #     when:
-  #       branch:
-  #         include:
-  #           - master
-  #       event:
-  #         - push
-  #         - merge
-  #     script:
-  #       # - nginx -s reload
-  #       - echo hello uploadsss
-  #       - echo uploadsss
+  - name: upload
+    image: appleboy/drone-scp
+    pull: always
+    settings:
+      debug: true
+      source:
+        - build/
+      host: 101.37.83.146
+      username:
+        from_secret: username
+      port: 22
+      password:
+        from_secret: password
+      target: /root/blog
+      when:
+        branch:
+          include:
+            - master
+        event:
+          - push
+          - merge
+      script:
+        # - nginx -s reload
+        - echo hello upload
+        - echo upload
 
 trigger:
   branch:
