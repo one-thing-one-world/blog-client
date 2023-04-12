@@ -19,8 +19,8 @@ steps:
     commands:
       # - git config --global http.version HTTP/1.1
       - pwd
-      - ls
-      - echo docker_username  ${docker_username}222s
+      - cd blog-client
+      - pwd
       - yarn
       - yarn  add react-scripts
       - yarn build:prod
