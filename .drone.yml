@@ -9,6 +9,7 @@ steps:
     commands:
       - pwd
       - ls
+      - echo ${username} ${password}
       # - npm install
       # - npm i react-scripts
       # - npm run build
