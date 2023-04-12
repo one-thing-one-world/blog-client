@@ -32,11 +32,9 @@ steps:
     pull: always
     settings:
       host: 101.37.83.146
-      username:
-        from_secret: ${username}
+      username: ${username}
       port: 22
-      password:
-        from_secret: ${password}
+      password: ${password}
       script:
         # - nginx -s reload
         - echo hello nginxsss
@@ -51,11 +49,9 @@ steps:
       source:
         - build/
       host: 101.37.83.146
-      username:
-        from_secret: ${username}
+      username: ${username}
       port: 22
-      password:
-        from_secret: ${password}
+      password: ${password}
       target: /root/blog
       when:
         branch:
