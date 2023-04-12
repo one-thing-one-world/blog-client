@@ -20,7 +20,7 @@ steps:
       # - git config --global http.version HTTP/1.1
       - pwd
       - ls
-      - echo password  ${password}
+      - echo docker_username  ${docker_username}
       # - npm install
       # - npm i react-scripts
       # - npm run build
