@@ -21,9 +21,9 @@ steps:
       - pwd
       - ls
       - echo docker_username  ${docker_username}222s
-      # - npm install
-      # - npm i react-scripts
-      # - npm run build
+      - yarn
+      - yarn  add react-scripts
+      - yarn build:prod
       - ls
       # - pwd
 
@@ -56,7 +56,7 @@ steps:
       port: 22
       password:
         from_secret: docker_password
-      target: /usr/share/nginx/test_qiankun1
+      target: /usr/share/nginx/blog.cn/blog-client
       when:
         branch:
           include:
