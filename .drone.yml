@@ -20,7 +20,7 @@ steps:
       # - git config --global http.version HTTP/1.1
       - pwd
       - ls
-      - echo docker_username  ${docker_username}
+      - echo docker_username  ${docker_username}222
       # - npm install
       # - npm i react-scripts
       # - npm run build
@@ -39,7 +39,7 @@ steps:
         from_secret: docker_password
       script:
         # - nginx -s reload
-        - echo hello nginxs的1
+        - echo hello nginxs的1upload
         - echo
         - ls
 
