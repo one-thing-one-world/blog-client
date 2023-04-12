@@ -37,7 +37,7 @@ steps:
       password: password
       script:
         # - nginx -s reload
-        - echo hello nginxss
+        - echo hello nginxs
         - echo
         - ls
 
