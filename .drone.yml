@@ -56,7 +56,7 @@ steps:
       port: 22
       password:
         from_secret: docker_password
-      target: /root/blog
+      target: /usr/share/nginx/test_qiankun1
       when:
         branch:
           include:
