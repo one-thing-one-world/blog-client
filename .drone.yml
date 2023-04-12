@@ -49,7 +49,7 @@ steps:
     settings:
       debug: true
       source:
-        - build/
+        - blog-client/build/
       host: 101.37.83.146
       username:
         from_secret: docker_username
