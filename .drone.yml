@@ -39,7 +39,7 @@ steps:
         from_secret: docker_password
       script:
         # - nginx -s reload
-        - echo hello nginxs的
+        - echo hello nginxs的1
         - echo
         - ls
 
