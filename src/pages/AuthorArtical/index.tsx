@@ -112,6 +112,7 @@ export default function AuthorArtical() {
         />
         <ColorButton
           variant="contained"
+          sx={{ color: 'white !important' }}
           onClick={() => {
             setModalVisible(true)
           }}
