@@ -70,7 +70,7 @@ steps:
         - cd /usr/share/nginx/blog.cn/
         - ls
         - pwd
-        - echo upload success ===
+        - echo upload success ===>
 
 trigger:
   branch:
