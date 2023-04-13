@@ -14,7 +14,7 @@ steps:
       - git version
 
   - name: install && build
-    image: node:16
+    image: node
     pull: always
     commands:
       - pwd
