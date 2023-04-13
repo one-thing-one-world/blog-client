@@ -17,11 +17,11 @@ steps:
     image: node
     pull: always
     commands:
-      - pwd
-      - cd blog-client
-      - yarn
-      - yarn  add react-scripts
-      - yarn build:prod
+      # - pwd
+      # - cd blog-client
+      # - yarn
+      # - yarn  add react-scripts
+      # - yarn build:prod
       - ls
       - pwd
 
