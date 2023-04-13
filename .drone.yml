@@ -38,8 +38,9 @@ steps:
       password:
         from_secret: docker_password
       script:
-        # - nginx -s reload
-        - echo hello nginxs的1upload
+        - cd /usr/share/nginx/blog.cn/blog-client
+        - rm -rf  build
+        - echo 'delete build success ==='
         - echo
         - ls
 
