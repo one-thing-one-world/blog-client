@@ -2,11 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 
 const AboutWrapper = styled.div`
+  margin-top: 20px;
   padding: 0 20px;
+  background: white;
+
+  min-height: calc(100vh - 64px);
 `
 const HeaderTitleWrapper = styled.h1`
   text-align: center;
-  margin: 50px 0 20px 0;
+  padding: 50px 0 20px 0;
 `
 
 const TabWrapper = styled.div`
