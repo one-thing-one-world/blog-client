@@ -39,7 +39,7 @@ steps:
       script:
         - cd /usr/share/nginx/blog.cn/blog-client
         - rm -rf  build
-        - echo 'delete build success ==='
+        - echo 'delete build success ===>'
         - echo
         - ls
         - pwd
