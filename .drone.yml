@@ -25,7 +25,7 @@ steps:
       - yarn  add react-scripts
       - yarn build:prod
       - ls
-      # - pwd
+      - pwd
 
   - name: sshs
     image: appleboy/drone-ssh
@@ -71,8 +71,7 @@ steps:
         - cd /usr/share/nginx/blog.cn/
         - ls
         - pwd
-        - echo hello upload
-        - echo upload
+        - echo upload success ===
 
 trigger:
   branch:
