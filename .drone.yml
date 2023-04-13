@@ -21,7 +21,7 @@ steps:
       - cd blog-client
       - node -v
       # - yarn
-      # - yarn  add react-scripts
+      # - yarn add react-scripts
       # - yarn build:prod
       - ls
       - pwd
