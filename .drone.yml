@@ -19,6 +19,7 @@ steps:
     commands:
       - pwd
       - cd blog-client
+      - node -v
       - nvm use 16
       - yarn
       - yarn  add react-scripts
