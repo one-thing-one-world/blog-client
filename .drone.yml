@@ -19,7 +19,6 @@ steps:
     commands:
       - pwd
       - cd blog-client
-      - pwd
       - yarn
       - yarn  add react-scripts
       - yarn build:prod
