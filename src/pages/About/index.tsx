@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const AboutWrapper = styled.div`
-  margin-top: 20px;
+  margin-top: 30px;
   padding: 0 20px;
   background: white;
 
