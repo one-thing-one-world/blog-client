@@ -43,6 +43,7 @@ steps:
         - echo 'delete build success ==='
         - echo
         - ls
+        - pwd
 
   - name: upload
     image: appleboy/drone-scp
@@ -57,7 +58,7 @@ steps:
       port: 22
       password:
         from_secret: docker_password
-      target: /usr/share/nginx/blog.cn/blog-client
+      target: /usr/share/nginx/blog.cn/
       when:
         branch:
           include:
@@ -66,7 +67,10 @@ steps:
           - push
           - merge
       script:
-        # - nginx -s reload
+        - nginx -s reload
+        - cd /usr/share/nginx/blog.cn/
+        - ls
+        - pwd
         - echo hello upload
         - echo upload
 
