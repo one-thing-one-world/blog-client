@@ -130,6 +130,7 @@ const ToTagWrapper = styled.div`
 interface TabListItem {
   name: string
   value: string
+  id: number
 }
 
 interface ITagLabelCom {
@@ -288,18 +289,22 @@ interface IModalContent {
 let tagList = [
   {
     name: '玄学',
+    id: 1,
     value: 'metaphysics',
   },
   {
     name: '科学',
+    id: 2,
     value: 'science',
   },
   {
     name: '计算机',
+    id: 3,
     value: 'tech',
   },
   {
     name: '生活',
+    id: 4,
     value: 'trivial',
   },
 ] as const
@@ -419,7 +424,7 @@ export default function ModalContent(props: IModalContent) {
           variant="contained"
           sx={{ marginTop: '100px', color: 'white' }}
           onClick={() => {
-            const tagTypes = toTagList.map(tab => tab.value)
+            // const tagTypes = toTagList.map(tab => tab.value)
             const httpSuccessFn = (res: IResponse<IaddArtical>) => {
               if (res.code === 200) {
                 enqueueSnackbar('文章发布成功', {
@@ -442,13 +447,16 @@ export default function ModalContent(props: IModalContent) {
                 })
               }
             }
+
+            let author = 'liujuncai'
+
             if (isEditor) {
               isParamsValid() &&
                 upDateArtical(id, {
                   title: inputValue,
                   content: html,
-                  tagType: JSON.stringify(tagTypes),
-                  author: 'liujuncai',
+                  tags: toTagList,
+                  author: author,
                   createTime: moment().format('YYYY-MM-DD'),
                 })
                   .then(res => {
@@ -460,8 +468,8 @@ export default function ModalContent(props: IModalContent) {
                 addArtical({
                   title: inputValue,
                   content: html,
-                  tagType: JSON.stringify(tagTypes),
-                  author: 'liujuncai',
+                  tags: toTagList,
+                  author: author,
                   createTime: moment().format('YYYY-MM-DD'),
                 })
                   .then(res => {

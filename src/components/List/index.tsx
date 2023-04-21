@@ -92,15 +92,17 @@ const ListItem = ({
   createTime,
   title,
   content,
-  tagType,
+  tags,
   id,
   author,
   getListData,
 }: IListItem) => {
-  console.log(JSON.parse(tagType), 'tagType')
+  // console.log(JSON.parse(tagType), 'tagType')
   const flag = useAppSelector(isLogin)
   const { enqueueSnackbar } = useSnackbar()
-  let bgColorList = tabList.filter(item => tagType.includes(item.name))
+  let bgColorList = tabList.filter(item =>
+    JSON.stringify(tags)?.includes(item.name)
+  )
   useEffect(() => {
     console.log(isLogin, 'isLogin')
   }, [isLogin])
@@ -113,7 +115,7 @@ const ListItem = ({
             content,
             createTime,
             title,
-            tagType,
+            tags,
             author,
           },
         })
@@ -141,7 +143,7 @@ const ListItem = ({
                 content,
                 createTime,
                 title,
-                tagType,
+                tags,
                 author,
                 id,
               },
@@ -187,20 +189,18 @@ export default function List(props: IList) {
   const { list, getListData } = props
   return (
     <ListContainer>
-      {list?.map(
-        ({ createTime, title, content, tagType, id, author }, index) => (
-          <ListItem
-            key={id}
-            title={title}
-            content={content}
-            createTime={createTime}
-            tagType={tagType}
-            id={id}
-            author={author}
-            getListData={getListData}
-          />
-        )
-      )}
+      {list?.map(({ createTime, title, content, tags, id, author }, index) => (
+        <ListItem
+          key={id}
+          title={title}
+          content={content}
+          createTime={createTime}
+          tags={tags}
+          id={id}
+          author={author}
+          getListData={getListData}
+        />
+      ))}
     </ListContainer>
   )
 }

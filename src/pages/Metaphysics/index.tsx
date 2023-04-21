@@ -15,14 +15,10 @@ export default function Metaphysics() {
 
   const getListData = () => {
     console.log('callbackGetData')
-    getArticalList()
+    getArticalList(1)
       .then(res => {
         console.log(res, 'res')
-        // science","trivial","tech","metaphysics
-        let arr = res?.data?.list?.filter(({ tagType }) =>
-          tagType.includes('metaphysics')
-        )
-        setarticalList(arr)
+        setarticalList(res?.data?.list)
       })
       .catch(err => console.log(err))
   }

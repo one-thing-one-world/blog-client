@@ -11,12 +11,17 @@
 //     Text: CustomText
 //   }
 // }
+interface ITags {
+  id: number
+  name: string
+  value: string
+}
 
 interface IListItem {
   title: string
   content: string
   createTime: string
-  tagType: string
+  tags: ITags[]
   id: number
   author: string
   getListData: () => void

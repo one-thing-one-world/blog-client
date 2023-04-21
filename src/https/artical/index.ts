@@ -5,10 +5,9 @@ export interface IResponse<T> {
   data: T
   message: string
 }
-
 export interface addArticalParams {
   title: string
-  tagType: string
+  tags: ITags[]
   author: string
   createTime: string
   content: string
@@ -29,9 +28,31 @@ interface IDeleteArticalData {
 export const addArtical = (
   params: addArticalParams
 ): Promise<IResponse<IaddArtical>> => axiosInstance.post('/artical/add', params)
-
-export const getArticalList = (): Promise<IResponse<IGetArticalListData>> =>
-  axiosInstance.get('/artical/all')
+// let tagList = [
+//   {
+//     name: '玄学',
+//     id: 1,
+//     value: 'metaphysics',
+//   },
+//   {
+//     name: '科学',
+//     id: 2,
+//     value: 'science',
+//   },
+//   {
+//     name: '计算机',
+//     id: 3,
+//     value: 'tech',
+//   },
+//   {
+//     name: '生活',
+//     id: 4,
+//     value: 'trivial',
+//   },
+export const getArticalList = (
+  id: number
+): Promise<IResponse<IGetArticalListData>> =>
+  axiosInstance.get(`/artical/all/${id}`)
 
 export const deleteArtical = (
   id: number

@@ -13,14 +13,9 @@ export default function Science() {
   const [articalList, setarticalList] = useState<any>([])
   const getListData = () => {
     console.log('callbackGetData')
-    getArticalList()
+    getArticalList(2)
       .then(res => {
-        console.log(res, 'res')
-        // science","trivial","tech","metaphysics
-        let arr = res?.data?.list?.filter(({ tagType }) =>
-          tagType.includes('science')
-        )
-        setarticalList(arr)
+        setarticalList(res?.data?.list)
       })
       .catch(err => console.log(err))
   }
