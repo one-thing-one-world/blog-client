@@ -31,7 +31,8 @@ steps:
     image: appleboy/drone-ssh
     pull: always
     settings:
-      host: 101.37.83.146
+      host:
+        from_secret: docker_host
       username:
         from_secret: docker_username
       port: 22
@@ -53,7 +54,8 @@ steps:
       debug: true
       source:
         - blog-client/build/
-      host: docker_host
+      host:
+        from_secret: docker_host
       username:
         from_secret: docker_username
       port: 22
