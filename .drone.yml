@@ -20,10 +20,10 @@ steps:
       - pwd
       - cd blog-client
       - node -v
-      - yarn
+      # - yarn
       # - yarn / hozhe \
-      - yarn add react-scripts
-      - yarn build:prod
+      # - yarn add react-scripts
+      # - yarn build:prod
       - ls
       - pwd
 
