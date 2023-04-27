@@ -42,7 +42,7 @@
 
 # production stage
 FROM nginx as production-stage
-WORKDIR /app
+# WORKDIR /app
 
 COPY . /usr/share/nginx/html
 # COPY --from=build-stage /app/nginx/default.conf /etc/nginx/conf.d/default.conf
