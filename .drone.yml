@@ -20,10 +20,10 @@ steps:
       - pwd
       - cd blog-client
       - node -v
-      - yarn
-      # - yarn / hozhe \
-      - yarn add react-scripts
-      - yarn build:prod
+      # - yarn
+      # - yarn / hozhe \--------
+      # - yarn add react-scripts
+      # - yarn build:prod
       - ls
       - pwd
 
@@ -39,6 +39,8 @@ steps:
       password:
         from_secret: docker_password
       script:
+        - ls
+        - pwd
         - cd /usr/share/nginx/blog.cn/blog-client
         - rm -rf  build
         - echo 'delete build successs ===>'
