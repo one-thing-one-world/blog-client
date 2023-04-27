@@ -27,28 +27,6 @@ steps:
       - ls
       - pwd
 
-  - name: sshs
-    image: appleboy/drone-ssh
-    pull: always
-    settings:
-      host:
-        from_secret: docker_host
-      username:
-        from_secret: docker_username
-      port: 22
-      password:
-        from_secret: docker_password
-      script:
-        - ls
-        - pwd
-        - cd /usr/share/nginx/blog.cn/blog-client
-        # - rm -rf  build
-        - echo 'delete build successs ===>'
-        - echo
-        - ssh -o
-        - ls
-        - pwd
-
   - name: upload
     image: appleboy/drone-scp
     pull: always
@@ -86,6 +64,28 @@ steps:
         - ls
         - pwd
         - echo upload success ===>
+
+  - name: sshs
+    image: appleboy/drone-ssh
+    pull: always
+    settings:
+      host:
+        from_secret: docker_host
+      username:
+        from_secret: docker_username
+      port: 22
+      password:
+        from_secret: docker_password
+      script:
+        - ls
+        - pwd
+        - cd /usr/share/nginx/blog.cn/blog-client
+        # - rm -rf  build
+        - echo 'delete build successs ===>'
+        - echo
+        - ssh -o
+        - ls
+        - pwd
 
 trigger:
   branch:
