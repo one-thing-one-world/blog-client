@@ -84,7 +84,6 @@ steps:
         # - rm -rf  build
         # - echo 'delete build successs ===>'
         - ls
-
         - docker build -t deploy-front deploy
         - docker-compose up deploy-front
         - echo 'successs ===>'
