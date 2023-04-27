@@ -42,7 +42,7 @@ steps:
         - ls
         - pwd
         - cd /usr/share/nginx/blog.cn/blog-client
-        - rm -rf  build
+        # - rm -rf  build
         - echo 'delete build successs ===>'
         - echo
         - ssh -o
@@ -55,7 +55,7 @@ steps:
     settings:
       debug: true
       source:
-        - blog-client/build/
+        - build/
       host:
         from_secret: docker_host
       username:
