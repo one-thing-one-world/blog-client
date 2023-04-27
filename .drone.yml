@@ -63,7 +63,9 @@ steps:
       port: 22
       password:
         from_secret: docker_password
-      target: /usr/share/nginx/blog.cn/
+        # target: /usr/share/nginx/blog.cn/
+        target: /root/front_workspace
+
       when:
         branch:
           include:
@@ -72,8 +74,13 @@ steps:
           - push
           - merge
       script:
-        - nginx -s reload
-        - cd /usr/share/nginx/blog.cn/
+        # - nginx -s reload
+        # - cd /usr/share/nginx/blog.cn/
+        - echo "hello deploy"
+        - docker build -t deploy-front deploy
+        - docker-compose up deploy-front
+        - docker ps -a
+
         - ls
         - pwd
         - echo upload success ===>
