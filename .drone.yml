@@ -65,8 +65,8 @@ steps:
         from_secret: docker_password
         # target:
         #   /usr/share/nginx/blog.cn/
-        # target: /root/front_workspace
-      target: /usr/share
+      target: /root/front_workspace
+      # target: /usr/share
 
       when:
         branch:
