@@ -77,9 +77,9 @@ steps:
         # - nginx -s reload
         # - cd /usr/share/nginx/blog.cn/
         - echo "hello deploy"
-        - docker build -t deploy-front deploy
-        - docker-compose up deploy-front
-        - docker ps -a
+        # - docker build -t deploy-front deploy
+        # - docker-compose up deploy-front
+        # - docker ps -a
 
         - ls
         - pwd
