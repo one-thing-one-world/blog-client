@@ -86,7 +86,7 @@ steps:
         - ls
         - docker build -t deploy .
         - echo 'deploy successs ===>'
-        - docker stop deploy
+        # - docker stop deploy
         - docker run --name deploy -i -p 80:80 deploy
         - echo 'run successs ===>'
 
