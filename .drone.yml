@@ -63,9 +63,10 @@ steps:
       port: 22
       password:
         from_secret: docker_password
-        target: /usr/share/nginx/blog.cn/
+        # target:
+        #   /usr/share/nginx/blog.cn/
         # target: /root/front_workspace
-        # target: /usr/share
+      target: /usr/share
 
       when:
         branch:
