@@ -84,8 +84,8 @@ steps:
         # - rm -rf  build
         # - echo 'delete build successs ===>'
         - ls
-        - docker build -t deploy deploy
-        - docker-compose up deploy
+        - docker build -t deploy .
+        - docker run -it deploy
         - echo 'successs ===>'
         # - ssh -o
         # - pwd
