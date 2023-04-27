@@ -55,7 +55,7 @@ steps:
     settings:
       debug: true
       source:
-        - /drone/src/blog-client
+        - /blog-client
       host:
         from_secret: docker_host
       username:
