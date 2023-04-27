@@ -81,8 +81,8 @@ steps:
         - pwd
         # - cd /usr/share/nginx/blog.cn/blog-client
         # - rm -rf  build
-        - echo 'delete build successs ===>'
-        # - echo
+        # - echo 'delete build successs ===>'
+        - echo 'successs ===>'
         # - ssh -o
         # - ls
         # - pwd
