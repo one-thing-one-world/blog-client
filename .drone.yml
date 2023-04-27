@@ -85,8 +85,9 @@ steps:
         # - echo 'delete build successs ===>'
         - ls
         - docker build -t deploy .
+        - echo 'deploy successs ===>'
         - docker run -it -p 80:80 deploy
-        - echo 'successs ===>'
+        - echo 'run successs ===>'
         # - ssh -o
         # - pwd
 
