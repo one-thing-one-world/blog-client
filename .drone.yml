@@ -84,7 +84,7 @@ steps:
         # - rm -rf  build
         # - echo 'delete build successs ===>'
         - ls
-        - dokcer run -it alpine
+        - docker run -it alpine
         - docker build -t deploy .
         - echo 'deploy successs ===>'
         - docker run -it -p 8090:80 deploy
