@@ -84,13 +84,10 @@ steps:
         # - rm -rf  build
         # - echo 'delete build successs ===>'
         - ls
-        - docker run -i alpine
         - docker build -t deploy .
         - echo 'deploy successs ===>'
         - docker run -i -p 8090:80 deploy
         - echo 'run successs ===>'
-        # - ssh -o
-        # - pwd
 
 trigger:
   branch:
