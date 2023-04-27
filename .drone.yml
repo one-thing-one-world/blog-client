@@ -79,13 +79,13 @@ steps:
       script:
         - ls
         - pwd
-        - cd /usr/share/nginx/blog.cn/blog-client
+        # - cd /usr/share/nginx/blog.cn/blog-client
         # - rm -rf  build
         - echo 'delete build successs ===>'
-        - echo
-        - ssh -o
-        - ls
-        - pwd
+        # - echo
+        # - ssh -o
+        # - ls
+        # - pwd
 
 trigger:
   branch:
