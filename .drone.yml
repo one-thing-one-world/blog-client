@@ -79,7 +79,7 @@ steps:
         - ls
         - pwd
         - cd front_workspace/blog-client/
-        # - cd /usr/share/nginx/blog.cn/blog-client
+        # - cd /usr/share/nginx/blog.cn/blog-client.
         # - rm -rf  build
         # - echo 'delete build successs ===>'
         - ls
