@@ -40,7 +40,6 @@
 
 - 使用 React + TS + Styled-componest + Redux + Docker/CICD 技术栈
 - 前端 github 地址: https://github.com/one-thing-one-world/blog-clien
-- 后端 github 地址: https://github.com/one-thing-one-world/nest-end
 - 推荐: node: 16.14.1
 
 > **项目内容介绍:**
