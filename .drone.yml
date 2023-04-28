@@ -44,7 +44,6 @@ steps:
         # target:
         #   /usr/share/nginx/blog.cn/
       target: /root/front_workspace
-      # target: /usr/share
 
       when:
         branch:
