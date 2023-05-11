@@ -43,7 +43,6 @@
 # production stage
 FROM nginx as production-stage
 # WORKDIR /app
-# RUN ls
 COPY . /usr/share/nginx/html
 COPY ./default.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
