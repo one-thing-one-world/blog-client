@@ -20,12 +20,6 @@ steps:
       - pwd
       - cd blog-client
       - node -v
-      # - yarn
-      # - yarn / hozhe \--------
-      # - yarn add react-scripts
-      # - yarn build:prod
-      - ls
-      - pwd
 
   - name: upload
     image: appleboy/drone-scp
@@ -41,8 +35,6 @@ steps:
       port: 22
       password:
         from_secret: docker_password
-        # target:
-        #   /usr/share/nginx/blog.cn/
       target: /root/front_workspace
 
       when:
@@ -53,14 +45,10 @@ steps:
           - push
           - merge
       script:
-        # - nginx -s reload
-        # - cd /usr/share/nginx/blog.cn/
         - echo "hello deploy"
         # - docker build -t deploy-front deploy
         # - docker-compose up deploy-front
         # - docker ps -a
-
-        - ls
         - pwd
         - echo upload success ===>
 
@@ -82,11 +70,10 @@ steps:
         # - cd /usr/share/nginx/blog.cn/blog-client
         # - rm -rf  build
         # - echo 'delete build successs ===>'
-        - ls
-        - docker build -t deploy .
+        - docker build -t deployfront .
         - echo 'deploy successs ===>'
         # - docker stop deploy
-        - docker run --name deploy -i -p 80:80 deploy
+        - docker run --name deploy -i -p 80:80 deployfront
         - echo 'run successs ===>'
 
 trigger:
