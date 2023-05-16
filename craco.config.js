@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 
 const resolve = dir => path.resolve(__dirname, dir)
-console.log('hello')
+// console.log('hello')
 module.exports = {
   webpack: {
     alias: {
@@ -44,16 +44,17 @@ module.exports = {
       })
       // console.log(rule.oneOf,'oneOf')
       webpackConfig.module.rules = webpackConfig.module.rules.map(rule => {
-        console.log(rule, 'ruleout')
+        // console.log(rule, 'ruleout')
         if (rule.oneOf) {
-          rule.oneOf = rule.oneOf.map((oneOfRule, index) => {
-            console.log(oneOfRule, 'oneOfRule1', index)
+          rule.oneOf = rule.oneOf.map(
+            (oneOfRule, index) =>
+              // console.log(oneOfRule, 'oneOfRule1', index)
 
-            // if (oneOfRule.use) {
-            //   oneOfRule.use[1].options.name = 'statics/media/[name].[hash].[ext]'
-            // }
-            return oneOfRule
-          })
+              // if (oneOfRule.use) {
+              //   oneOfRule.use[1].options.name = 'statics/media/[name].[hash].[ext]'
+              // }
+              oneOfRule
+          )
         }
         return rule
       })
@@ -68,6 +69,27 @@ module.exports = {
 
         rule.oneOf[2].use[1].options.name = 'blog/assets/[name].[hash].[ext]'
       }
+
+      // const scopePluginIndex = webpackConfig.resolve.plugins.findIndex(
+      //   ({ constructor }) =>
+      //     constructor && constructor.name === 'ModuleScopePlugin'
+      // )
+
+      // webpackConfig.resolve.plugins.splice(scopePluginIndex, 1)
+      // webpackConfig.resolve = {
+      //   fallback: {
+      //     path: require.resolve('path-browserify'),
+      //     // crypto: require.resolve('crypto-browserify'),
+      //     // stream: require.resolve('stream-browserify'),
+      //   },
+      // }
+      console.log(
+        webpackConfig.resolve.fallback,
+        ' webpackConfig.resolve.fallback'
+      )
+      // webpackConfig.resolve.fallback.path =
+      //   webpackConfig.resolve.fallback.path ??
+      //   require.resolve('path-browserify')
 
       return webpackConfig
     },

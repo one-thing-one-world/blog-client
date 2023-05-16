@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import Markdown from './Markdown'
 
 const AboutWrapper = styled.div`
   margin-top: 30px;
-  padding: 0 20px;
+  padding: 0 20px 20px 20px;
   background: white;
 
   min-height: calc(100vh - 64px);
@@ -76,6 +77,15 @@ export default function About() {
             Xss... , 我也很喜欢中国传统文化:例如：周易,
             奇门遁甲等等，我也很喜欢球类运动，足球，羽毛球，乒乓球，台球... 。
           </p>
+        </ContentWrapper>
+        <TitleWrapper>
+          <CircleContainer>
+            <CircleWrapper />
+          </CircleContainer>
+          个人简历
+        </TitleWrapper>
+        <ContentWrapper>
+          <Markdown />
         </ContentWrapper>
       </TabWrapper>
     </AboutWrapper>

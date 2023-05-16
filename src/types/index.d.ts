@@ -11,6 +11,9 @@
 //     Text: CustomText
 //   }
 // }
+declare module '*.md'
+declare module 'react-syntax-highlighter'
+declare module 'react-syntax-highlighter/dist/esm/styles/prism'
 interface ITags {
   id: number
   name: string
