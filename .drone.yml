@@ -17,8 +17,6 @@ steps:
     image: node:16
     pull: always
     commands:
-      - pwd
-      - cd blog-client
       - node -v
 
   - name: upload
@@ -45,12 +43,7 @@ steps:
           - push
           - merge
       script:
-        - echo "hello deploy"
-        # - docker build -t deploy-front deploy
-        # - docker-compose up deploy-front
-        # - docker ps -a
-        - pwd
-        - echo upload success ===>
+        - echo upload <=== success ===>
 
   - name: sshs
     image: appleboy/drone-ssh
@@ -64,18 +57,10 @@ steps:
       password:
         from_secret: docker_password
       script:
-        - ls
-        - pwd
         - cd front_workspace/blog-client/
-        # - cd /usr/share/nginx/blog.cn/blog-client
-        # - rm -rf  build
-        # - echo 'delete build successs ===>'
         - docker build -t deployfront .
-        - echo 'deploy successs ===>'
-        # - docker stop deploy
         - docker run --name deploy -i -p 80:80 deployfront
-        - echo 'run successs ===>'
-
+        - echo drone-ssh <=== success ===>
 trigger:
   branch:
     include:
