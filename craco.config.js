@@ -83,10 +83,10 @@ module.exports = {
       //     // stream: require.resolve('stream-browserify'),
       //   },
       // }
-      console.log(
-        webpackConfig.resolve.fallback,
-        ' webpackConfig.resolve.fallback'
-      )
+      // console.log(
+      //   webpackConfig.resolve.fallback,
+      //   ' webpackConfig.resolve.fallback'
+      // )
       // webpackConfig.resolve.fallback.path =
       //   webpackConfig.resolve.fallback.path ??
       //   require.resolve('path-browserify')

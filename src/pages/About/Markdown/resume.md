@@ -2,27 +2,28 @@
 电话：18227137395  
 邮箱：1769031928@qq.com  
 期望岗位：web 前端工程师（成都）或者 前端 leader  
-Github: https://github.com/one-thing-one-world  
-个人博客: www.flyfrag.cn
+Github: https://github.com/one-thing-one-world
+
+<!-- 个人博客: www.flyfrag.cn -->
 
 > **<font color=black face="仿宋" size=5 >专业技能：</font>**
 
-- 熟练 Typescript.
-- 熟练 react 全家桶
-- 熟练 vue2.x 全家桶，熟悉 vue3.0
-- 熟练 webpack 打包，以及项目优化。
-- 熟练 docker/cicd。
+- 熟练 TypeScript.
+- 熟练 React 全家桶
+- 熟练 Vue2.x 全家桶，熟悉 Vue3.0
+- 熟练 Webpack 打包，以及项目优化。
+- 熟练 Docker/CICD。
 - 熟练使用 微前端（乾坤）。
-- 熟练使用项目需要的第三方插件。（Moments.js, Fullcalendar, Draft.js ,- Wangediter, Quill, Echats ,高德地图的使用）
-- 熟悉 node。(nest + mysql)
-- 熟悉 flutter，小程序等。
+- 熟练使用项目需要的第三方插件。（Moments.js, Fullcalendar, Draft.js , Wangediter, Quill, Echats ,高德地图的使用）
+- 熟悉 Node。(Nest + MySQL)
+- 熟悉 小程序等。
 - 熟悉常用模式,策略模式，代理模式，继承模式,HOC 模式.
 
 > **<font color=black face="仿宋" size=5 >工作经验：</font>**
 
 - 2022 年 6 月～ 至今 光恒互动 web 前端工程师
 - 2021 年 6 月～ 2022 年 6 月 博彦科技 web 前端工程师
-- 2019 年~2021 实习去了一家外包（倒闭了），然后去了双语帮（远程工作和成都云数未来有限公司）。web 前端工程师
+- 2019 年~2021 实习去了一家外包（倒闭了），然后去了成都云数未来有限公司。web 前端工程师
 
 > **<font color=black face="仿宋" size=5 >工作职责：</font>**
 
@@ -48,18 +49,17 @@ Github: https://github.com/one-thing-one-world
 6. 运营后台：由客服工单管理，回复列表，客服管理，工单管理和用户查询和公告管理和公告审核等功能页面组成。
 7. 应用中心：由应用管理和 SDK 列表和官网配置页面以及用户协议和隐私协议等页面组成。
 
-**项目技术栈：TS + qiankun + react+styled + redux + antd + echarts**
+**项目技术栈：TS + Qiankun + React + Styled Component + Redux + Ant Design + Echarts**
 
 **责任描述:**
 
 1. 参与项目设计与 ui 设计，制定项目周期以及技术栈的选定。
-2. 主要负责基础框架建设和负责项目的搭建（ Eslint + Pretter + Husky ）以及规范的制定。
+2. 主要负责基础框架建设和负责项目的搭建（ Eslint + Prettier + Husky ）以及规范的制定。
 3. 和后台开发人员讨论接口数据并制作接口文档。
 4. 开发以及二次封装常用公共组件（自定义侧边栏 menu 组件，时间组件，ehcarts 数据展示组件，loading 组件，table 组件，富文本组件等。）
 5. 攻克项目所有的难点与重点，提供难点方案。
-6. 负责项目的搭建（ Eslint + Pretter + Husky ）以及规范的制定。
-7. 优化项目 (webpack 代码分割以及代码压缩和路由懒加载和图片懒加载，)。
-8. 带领前端团队学习新技术。
+6. 优化项目 (webpack 代码分割以及代码压缩和路由懒加载和图片懒加载)。
+7. 带领前端团队学习新技术。
 
 > **二. selfce 后台管理系统项目**
 
@@ -84,7 +84,7 @@ Github: https://github.com/one-thing-one-world
 > **三. 阅文游戏官网项目**
 
 **项目描述：**
-&emsp; 该项目是阅文下的游戏官网，类似元神官网，用来展示游戏最新动态以及游戏任务介绍。
+&emsp; 该项目是阅文下的游戏官网，类似原神官网，用来展示游戏最新动态以及游戏任务介绍。
 
 1. 首页，新闻，任务，世界数据图片，表格展示。支持图片轮播切换.
 2. 支持多语言翻译。
@@ -99,7 +99,7 @@ Github: https://github.com/one-thing-one-world
 2. 和后台开发人员讨论接口数据并制作接口文档。
 3. 封装项目的公共组件：tab 切换组件，modal 组件，tips 组件等...
 4. 攻克项目所有的难点与重点。
-5. 负责项目的搭建（ Eslint + Pretter + Husky ）以及规范的制定。
+5. 负责项目的搭建（ Eslint + Prettier + Husky ）以及规范的制定。
 
 > **四. 王者荣耀内嵌 H5 页面开发项目**
 
@@ -117,7 +117,7 @@ Github: https://github.com/one-thing-one-world
 1. 和后台开发人员讨论接口数据并制作接口文档。
 2. 和产品商讨共同最优页面方案。
 
-> **五. 个人博客项目**
+<!-- > **五. 个人博客项目**
 
 **项目描述：**
 
@@ -126,7 +126,7 @@ Github: https://github.com/one-thing-one-world
 **前端:**
 
 1. 博客使用 react(hook) 和 materialui。
-2. 您也可以通过支付宝和微信以及虚拟货币对我支持～
+2. 您也可以通过支付宝和微信对我支持～
 3. 如果有什么建议或者想法可以通过博客的邮箱联系我。
 
 **后端:**
@@ -144,9 +144,9 @@ Github: https://github.com/one-thing-one-world
 **项目后端技术栈：使用 React + TS + Styled-componest + Redux + Docker/CICD 等技术栈**
 
 **个人博客地址: www.flyfrag.cn**
-**个人代码地址: https://github.com/one-thing-one-world/blog-client**
+**个人代码地址: https://github.com/one-thing-one-world/blog-client** -->
 
 > **<font color=black face="仿宋" size=5 >个人荣誉：</font>**
 
-👋 获得腾讯基地 2022 第一季度最佳员工奖。  
-👋 获得光恒互动 2022 年度最佳员工奖。
+🎉 获得腾讯基地 2022 第一季度最佳员工奖。  
+🎉 获得光恒互动 2022 年度最佳员工奖。
