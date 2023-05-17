@@ -1,39 +1,37 @@
-姓名：刘俊才
-电话：18227137395
-邮箱：1769031928@qq.com
-期望岗位：web 前端工程师（成都）或者 前端 leader
-Github: https://github.com/one-thing-one-world
+姓名：刘俊才  
+电话：18227137395  
+邮箱：1769031928@qq.com  
+期望岗位：web 前端工程师（成都）或者 前端 leader  
+Github: https://github.com/one-thing-one-world  
 个人博客: www.flyfrag.cn
 
 > **<font color=black face="仿宋" size=5 >专业技能：</font>**
 
-熟练 Typescript.
-熟练 react 全家桶
-熟练 vue2.x 全家桶，熟悉 vue3.0
-熟练 webpack 打包，以及项目优化。
-熟练 docker/cicd。
-熟练使用 微前端（乾坤）。
-熟练使用项目需要的第三方插件。（Moments.js, Fullcalendar, Draft.js , Wangediter, Quill, Echats ,高德地图的使用）
-熟悉 node(nest)
-熟悉 flutter，小程序等。
-熟悉常用模式,策略模式，代理模式，继承模式,HOC 模式.
+- 熟练 Typescript.
+- 熟练 react 全家桶
+- 熟练 vue2.x 全家桶，熟悉 vue3.0
+- 熟练 webpack 打包，以及项目优化。
+- 熟练 docker/cicd。
+- 熟练使用 微前端（乾坤）。
+- 熟练使用项目需要的第三方插件。（Moments.js, Fullcalendar, Draft.js ,- Wangediter, Quill, Echats ,高德地图的使用）
+- 熟悉 node。(nest + mysql)
+- 熟悉 flutter，小程序等。
+- 熟悉常用模式,策略模式，代理模式，继承模式,HOC 模式.
 
 > **<font color=black face="仿宋" size=5 >工作经验：</font>**
 
-2022 年 6 月～ 至今 光恒互动 web 前端工程师
-
-2021 年 6 月～ 2022 年 6 月 博彦科技 web 前端工程师
-
-2019 年~2021 实习去了一家外包（倒闭了），然后去了双语帮（远程工作和成都云数未来有限公司）。web 前端工程师
+- 2022 年 6 月～ 至今 光恒互动 web 前端工程师
+- 2021 年 6 月～ 2022 年 6 月 博彦科技 web 前端工程师
+- 2019 年~2021 实习去了一家外包（倒闭了），然后去了双语帮（远程工作和成都云数未来有限公司）。web 前端工程师
 
 > **<font color=black face="仿宋" size=5 >工作职责：</font>**
 
-    1. web 网站前端页面制作以及项目整体技术以及人员的把控；
-    2. 同后端程序工程师紧密合作，共同完成项目；
-    3. 负责前端的维护、优化、重构；
-    4. 负责开发上线后的优化与迭代开发;
-    5. 负责新技术的调研与投入使用。
-    6. 帮助初中级前端同事学习新技术以及难点。
+1. web 网站前端页面制作以及项目整体技术以及人员的把控；
+2. 同后端程序工程师紧密合作，共同完成项目；
+3. 负责前端的维护、优化、重构；
+4. 负责开发上线后的优化与迭代开发;
+5. 负责新技术的调研与投入使用。
+6. 帮助初中级前端同事学习新技术以及难点。
 
 > **<font color=black face="仿宋" size=5 >项目经验：</font>**
 
@@ -54,14 +52,14 @@ Github: https://github.com/one-thing-one-world
 
 **责任描述:**
 
-1．参与项目设计与 ui 设计，制定项目周期以及技术栈的选定。
-2．主要负责基础框架建设和负责项目的搭建（ Eslint + Pretter + Husky ）以及规范的制定。
-3．和后台开发人员讨论接口数据并制作接口文档。
-4．开发以及二次封装常用公共组件（自定义侧边栏 menu 组件，时间组件，ehcarts 数据展示组件，loading 组件，table 组件，富文本组件等。）
-5．攻克项目所有的难点与重点，提供难点方案。
-6．负责项目的搭建（ Eslint + Pretter + Husky ）以及规范的制定。
-7．优化项目 (webpack 代码分割以及代码压缩和路由懒加载和图片懒加载，)。
-8．带领前端团队学习新技术。
+1. 参与项目设计与 ui 设计，制定项目周期以及技术栈的选定。
+2. 主要负责基础框架建设和负责项目的搭建（ Eslint + Pretter + Husky ）以及规范的制定。
+3. 和后台开发人员讨论接口数据并制作接口文档。
+4. 开发以及二次封装常用公共组件（自定义侧边栏 menu 组件，时间组件，ehcarts 数据展示组件，loading 组件，table 组件，富文本组件等。）
+5. 攻克项目所有的难点与重点，提供难点方案。
+6. 负责项目的搭建（ Eslint + Pretter + Husky ）以及规范的制定。
+7. 优化项目 (webpack 代码分割以及代码压缩和路由懒加载和图片懒加载，)。
+8. 带领前端团队学习新技术。
 
 > **二. selfce 后台管理系统项目**
 
@@ -77,10 +75,11 @@ Github: https://github.com/one-thing-one-world
 **项目技术栈：vue + vuex + typescript + and desighn pro + echarts**
 
 **责任描述:**
-1．参与项目设计与 ui 设计，制定项目周期以及技术栈的选定。
-2．和后台开发人员讨论接口数据并制作接口文档。
-3．负责了难点和核心模块。
-4．公共组件的封装（拖拽组件，日历组件，富文本组件，二次封装表格，表单以及 modal 组件..）。
+
+1. 参与项目设计与 ui 设计，制定项目周期以及技术栈的选定。
+2. 和后台开发人员讨论接口数据并制作接口文档。
+3. 负责了难点和核心模块。
+4. 公共组件的封装（拖拽组件，日历组件，富文本组件，二次封装表格，表单以及 modal 组件..）。
 
 > **三. 阅文游戏官网项目**
 
@@ -95,11 +94,12 @@ Github: https://github.com/one-thing-one-world
 **项目技术栈：remix + redux + TS + tailwindcss**
 
 **责任描述:**
-1．参与项目设计与 ui 设计，制定项目周期以及技术栈的选定。
-2．和后台开发人员讨论接口数据并制作接口文档。
-4．封装项目的公共组件：tab 切换组件，modal 组件，tips 组件等...
-5．攻克项目所有的难点与重点。
-6．负责项目的搭建（ Eslint + Pretter + Husky ）以及规范的制定。
+
+1. 参与项目设计与 ui 设计，制定项目周期以及技术栈的选定。
+2. 和后台开发人员讨论接口数据并制作接口文档。
+3. 封装项目的公共组件：tab 切换组件，modal 组件，tips 组件等...
+4. 攻克项目所有的难点与重点。
+5. 负责项目的搭建（ Eslint + Pretter + Husky ）以及规范的制定。
 
 > **四. 王者荣耀内嵌 H5 页面开发项目**
 
@@ -140,13 +140,13 @@ Github: https://github.com/one-thing-one-world
 
 通过所有的项目都是通过编写.yml 文件和 dockerfile 文件，实现前端和后端的 cicd 部署。
 
-**项目前端技术栈：** 使用 Nest + TS + Mysql + Docker/CICD 技术栈
-**项目后端技术栈：** 使用 React + TS + Styled-componest + Redux + Docker/CICD 等技术栈
+**项目前端技术栈：使用 Nest + TS + Mysql + Docker/CICD 技术栈**
+**项目后端技术栈：使用 React + TS + Styled-componest + Redux + Docker/CICD 等技术栈**
 
-**个人博客地址** : www.flyfrag.cn
-**个人代码地址** : https://github.com/one-thing-one-world/blog-client
+**个人博客地址: www.flyfrag.cn**
+**个人代码地址: https://github.com/one-thing-one-world/blog-client**
 
 > **<font color=black face="仿宋" size=5 >个人荣誉：</font>**
 
-👋 获得腾讯基地 2022 第一季度最佳员工奖。
+👋 获得腾讯基地 2022 第一季度最佳员工奖。  
 👋 获得光恒互动 2022 年度最佳员工奖。
