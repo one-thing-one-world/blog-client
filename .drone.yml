@@ -59,7 +59,7 @@ steps:
       script:
         - cd front_workspace/blog-client/
         - docker build -t deployfront .
-        - docker run --name deploy -i -p 85:80 deployfront
+        - docker run --name deploy -i -p 80:80 deployfront
         - echo drone-ssh <=== success ===>
 trigger:
   branch:
