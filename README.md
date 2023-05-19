@@ -34,4 +34,4 @@ $ yarn start:dev
 
 ## 最后：
 
-> 如果您有建议或者觉得博客哪里有问题，欢迎联系作者（ liujuncai6666@gmail.com ）。
+> 如果您有建议或者觉得博客哪里有问题，欢迎联系作者（ liujuncai6666@gmail.com ）
