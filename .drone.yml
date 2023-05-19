@@ -43,6 +43,7 @@ steps:
           - push
           - merge
       script:
+        - echo upload <=== success ===>
 
   - name: sshs
     image: appleboy/drone-ssh
