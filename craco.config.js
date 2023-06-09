@@ -6,7 +6,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 
 const resolve = dir => path.resolve(__dirname, dir)
-// console.log('hello')
 module.exports = {
   webpack: {
     alias: {
