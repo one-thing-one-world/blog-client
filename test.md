@@ -1,5 +1,5 @@
 {
-//储存时候自动统一代码格式
+//储存时候自动统一代码格式.
 "editor.formatOnSave": true,
 //粘贴时候自动统一代码格式
 "editor.formatOnPaste": true,
