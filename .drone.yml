@@ -18,6 +18,7 @@ steps:
     pull: always
     commands:
       - node -v
+      - yarn
 
   - name: upload
     image: appleboy/drone-scp
