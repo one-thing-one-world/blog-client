@@ -9,11 +9,9 @@ steps:
     image: alpine/git
     pull: if-not-exists # 如果在本地缓存中找不到image，则仅拉取image.
     commands:
-      - git config --unset http.proxy
-      - git config  --unset https.proxy
+      - git version
       - git config --global http.version HTTP/1.1
       - git clone https://github.com/one-thing-one-world/blog-client.git
-      - git version
 
   - name: install && build
     image: node:16
