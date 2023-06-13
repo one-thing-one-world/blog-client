@@ -7,7 +7,7 @@ clone:
 steps:
   - name: clone-test
     image: alpine/git:2.36.3
-    pull: if-not-exists # 如果在本地缓存中找不到image，则仅拉取image.
+    pull: if-not-exists # 如果在本地缓存中找不到image，则仅拉取image
     commands:
       - git version
       - git config --global http.version HTTP/1.1
@@ -60,6 +60,7 @@ steps:
         - cd front_workspace/blog-client/
         - docker stop deploy
         - docker rf -f  deploy
+        - docker rmi deployfront
         - docker build -t deployfront .
         - docker run --name deploy -i -p 80:80 deployfront
         - echo drone-ssh <=== success ===>
