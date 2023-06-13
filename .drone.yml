@@ -6,7 +6,7 @@ clone:
 
 steps:
   - name: clone-test
-    image: alpine/git
+    image: alpine/git:2.36.3
     pull: if-not-exists # 如果在本地缓存中找不到image，则仅拉取image.
     commands:
       - git version
