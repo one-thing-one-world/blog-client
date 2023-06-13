@@ -1,11 +1,11 @@
 kind: pipeline
 type: docker
-name: default
+name: front
 clone:
   disable: true
 
 steps:
-  - name: clone-test
+  - name: clone-code
     image: alpine/git:2.36.3
     pull: if-not-exists # 如果在本地缓存中找不到image，则仅拉取image
     commands:
