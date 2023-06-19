@@ -64,6 +64,7 @@ steps:
         # - docker stop deploy
         # - docker rf -f  deploy
         # - docker rmi deployfront
+        - ls
         - docker ps -a
         - docker build -t deployfront .
         - docker run --name deploy -i -p 80:80 deployfront
