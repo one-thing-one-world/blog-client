@@ -60,7 +60,7 @@ steps:
       password:
         from_secret: docker_password
       script:
-        # - cd front_workspace/blog-client/
+        - cd front_workspace/blog-client/
         # - docker stop deploy
         # - docker rf -f  deploy
         # - docker rmi deployfront
