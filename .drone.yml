@@ -61,13 +61,14 @@ steps:
         from_secret: docker_password
       script:
         - cd front_workspace/blog-client/
+        - sh deploy_runner.sh
         # - docker stop deploy
         # - docker rf -f  deploy
         # - docker rmi deployfront
-        - ls
-        - docker ps -a
-        - docker build -t deployfront .
-        - docker run --name deploy -i -p 80:80 deployfront
+        # - ls
+        # - docker ps -a
+        # - docker build -t deployfront .
+        # - docker run --name deploy -i -p 80:80 deployfront
         - echo drone-ssh <=== success ===>
       environment:
         DRONE_STEP_TIMEOUT: 1800
