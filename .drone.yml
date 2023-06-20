@@ -61,6 +61,7 @@ steps:
         from_secret: docker_password
       script:
         - cd front_workspace/blog-client/
+        - docker ps -a
         - sh deploy_runner.sh
         # - docker stop deploy
         # - docker rf -f  deploy
