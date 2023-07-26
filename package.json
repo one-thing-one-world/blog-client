@@ -46,7 +46,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start:dev": "dotenv -e .env.dev craco start",
+    "start:dev": "dotenv -e .env.dev cross-env PORT=80 craco start",
     "start:prod": "dotenv -e .env.prod craco start",
     "build:dev": "dotenv -e .env.dev craco build",
     "build:prod": "dotenv -e .env.prod craco build",
