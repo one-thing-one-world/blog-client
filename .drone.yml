@@ -70,7 +70,7 @@ steps:
         # - docker ps -a
         # - docker build -t deployfront .
         # - docker run --name deploy -i -p 80:80 deployfront
-        - echo drone-ssh <=== success ===>
+        - echo drone-ssh <=== success. ===>
       environment:
         DRONE_STEP_TIMEOUT: 1800
 
